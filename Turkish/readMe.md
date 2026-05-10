@@ -15,15 +15,21 @@
   </a>
 
 <sub>Yazar: <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> October, 2020</small></sub>
+<small> Ekim, 2020</small></sub>
 
 </div>
 
-[Gün 2 >>](./02_Gun_Reacta_Giris/02_reacta_giris.md)
+[Gün 1 >>](./01_Gun_JavaScript_Tazeleyici/01_javascript_tazeleyici.md)
 
-| # Gün |                                              Konular                                               |
-| ----- | :------------------------------------------------------------------------------------------------: |
-| 02    |          [React'a Giriş](./02_Gun_Reacta_Giris/02_reacta_giris.md)                                |
-| 03    |          [Kurulum](./03_Gun_Kurulum/03_kurulum.md)                                                 |
-| 04    |          [Bileşenler](./04_Gun_Bilesenler/04_bilesenler.md)                                        |
-| 05    |          [Props](./05_Gun_Props/05_props.md)                                                       |
+| # Gün |                                       Konular                                       |
+| ----- | :---------------------------------------------------------------------------------: |
+| 01    | [JavaScript Tazeleyici](./01_Gun_JavaScript_Tazeleyici/01_javascript_tazeleyici.md) |
+| 02    |              [React'a Giriş](./02_Gun_Reacta_Giris/02_reacta_giris.md)              |
+| 03    |                      [Kurulum](./03_Gun_Kurulum/03_kurulum.md)                      |
+| 04    |                 [Bileşenler](./04_Gun_Bilesenler/04_bilesenler.md)                  |
+| 05    |                         [Props](./05_Gun_Props/05_props.md)                         |
+| 06    |          [Dizi Haritalama](./06_Gun_Dizi_Haritalama/06_dizi_haritalama.md)          |
+| 07    |        [Class Bileşenler](./07_Gun_Class_Bilesenler/07_class_bilesenler.md)         |
+| 08    |                     [State (Durum)](./08_Gun_State/08_state.md)                     |
+| 09    |           [Koşullu Render](./09_Gun_Kosullu_Render/09_kosullu_render.md)            |
+| 10    |    [Proje Klasör Yapısı](./10_Gun_Proje_Klasor_Yapisi/10_proje_klasor_yapisi.md)    |

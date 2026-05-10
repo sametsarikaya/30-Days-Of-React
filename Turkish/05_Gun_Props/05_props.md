@@ -7,14 +7,14 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Yazar:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> October, 2020</small>
+<small> Ekim, 2020</small>
 </sub>
 
 </div>
 
-[<< Gün 4](../04_Gun_Bilesenler/04_bilesenler.md) | [Gün 6 >>](../../06_Day_Map_List_Keys/06_map_list_keys.md)
+[<< Gün 4](../04_Gun_Bilesenler/04_bilesenler.md) | [Gün 6 >>](../06_Gun_Dizi_Haritalama/06_dizi_haritalama.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_5.jpg)
 
@@ -81,19 +81,19 @@ const User = (props) => {
 Bir önceki bölümde verileri şu şekilde enjekte etmiştik; bugün bu verileri props'a dönüştüreceğiz.
 
 ```js
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
+const welcome = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
 const author = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
-}
-const date = 'Oct 4, 2020'
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+const date = "Oct 4, 2020";
 
 // Header Bileşeni
 const Header = () => (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
@@ -103,7 +103,7 @@ const Header = () => (
       <small>{date}</small>
     </div>
   </header>
-)
+);
 ```
 
 Veri enjekte etmek yerine verileri props olarak da geçirebiliriz. React props'ları, fonksiyonlardaki parametrelere benzer.
@@ -113,15 +113,15 @@ Veri enjekte etmek yerine verileri props olarak da geçirebiliriz. React props'l
 React props'ı, bir React component'i oluşturduğunuzda anında elde ettiğiniz bir nesnedir. Component'e özellik geçirmeden önce props nesnesinde ne elde ettiğimize bakalım.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Header Bileşeni
 const Header = (props) => {
-  console.log(props) // boş nesne, {}
+  console.log(props); // boş nesne, {}
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -131,22 +131,22 @@ const Header = (props) => {
         <small>{date}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   return (
-    <div className='app'>
+    <div className="app">
       <Header />
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 Yukarıdaki console.log(props) ifadesinde boş bir nesne ({}) görürsünüz. Bu şu anlama gelir: component'i oluştururken herhangi bir özellik ya da nitelik geçirmezseniz props boş olacaktır; geçirirseniz, geçirdiğiniz verilerle doldurulacak ve bu niteliklerin doğru adı props olacaktır.
@@ -154,41 +154,41 @@ Yukarıdaki console.log(props) ifadesinde boş bir nesne ({}) görürsünüz. Bu
 Basit bir örnekle başlayalım. Aşağıdaki örnekte, Header component'ine props olarak welcome dizesi geçirilmiştir.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Header Bileşeni
 const Header = (props) => {
-  console.log(props) // {welcome:'Welcome to 30 Days Of React'}
+  console.log(props); // {welcome:'Welcome to 30 Days Of React'}
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{props.welcome}</h1>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   return (
-    <div className='app'>
-      <Header welcome='Welcome to 30 Days Of React' />
+    <div className="app">
+      <Header welcome="Welcome to 30 Days Of React" />
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 Artık console.log(props) yaptığınızda şu nesneyi görmelisiniz; bu, Header component'ine geçirdiğimiz welcome özelliğinin props nesnesinin içinde bulunduğu anlamına gelir.
 
 ```js
 {
-  welcome: 'Welcome to 30 Days Of React'
+  welcome: "Welcome to 30 Days Of React";
 }
 ```
 
@@ -201,15 +201,15 @@ Yukarıdaki koddan görüleceği üzere Header component'ine yalnızca tek bir p
 Component'e nitelik olarak geçirilen props'ın veri türü string'dir.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Header Bileşeni
 const Header = (props) => {
-  console.log(props)
+  console.log(props);
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{props.welcome}</h1>
         <h2>{props.title}</h2>
         <h3>{props.subtitle}</h3>
@@ -219,26 +219,26 @@ const Header = (props) => {
         <small>{props.date}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => (
-  <div className='app'>
+  <div className="app">
     <Header
-      welcome='Welcome to 30 Days Of React'
-      title='Getting Started React'
-      subtitle='JavaScript Library'
-      firstName='Asabeneh'
-      lastName='Yetayeh'
-      date='Oct 4, 2020'
+      welcome="Welcome to 30 Days Of React"
+      title="Getting Started React"
+      subtitle="JavaScript Library"
+      firstName="Asabeneh"
+      lastName="Yetayeh"
+      date="Oct 4, 2020"
     />
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Tarayıcı konsolunu kontrol ederseniz şu nesneyi görürsünüz:
@@ -259,13 +259,13 @@ Artık bir JavaScript ustası olduğunuza göre bu nesneyle ne yapacağınızı 
 Yukarıdaki örnekte görüldüğü gibi props değerleri statik olarak yazılmıştır. Ancak bir mantık uygulamak istediğimizde statik verilerle bunu yapmak güçleşir; bu nedenle değişkenleri props olarak kullanmak daha iyi olacaktır. Şu örneğe bakalım:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Header Bileşeni
 const Header = (props) => (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{props.welcome}</h1>
       <h2>{props.title}</h2>
       <h3>{props.subtitle}</h3>
@@ -275,20 +275,20 @@ const Header = (props) => (
       <small>{props.date}</small>
     </div>
   </header>
-)
+);
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
-  const welcome = 'Welcome to 30 Days Of React'
-  const title = 'Getting Started React'
-  const subtitle = 'JavaScript Library'
-  const firstName = 'Asabeneh'
-  const lastName = 'Yetayeh'
-  const date = 'Oct 4, 2020'
+  const welcome = "Welcome to 30 Days Of React";
+  const title = "Getting Started React";
+  const subtitle = "JavaScript Library";
+  const firstName = "Asabeneh";
+  const lastName = "Yetayeh";
+  const date = "Oct 4, 2020";
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header
         welcome={welcome}
         title={title}
@@ -298,10 +298,10 @@ const App = () => {
         date={date}
       />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ### Number Props Türü
@@ -309,32 +309,32 @@ ReactDOM.render(<App />, rootElement)
 Bir component'e sayısal props kullanalım.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Age = (props) => <div>The person is {props.age} years old.</div>
+const Age = (props) => <div>The person is {props.age} years old.</div>;
 const Weight = (props) => (
   <p>The weight of the object on earth is {props.weight} N.</p>
-)
+);
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
-  let currentYear = 2020
-  let birthYear = 1820
-  const age = currentYear - birthYear
-  const gravity = 9.81
-  const mass = 75
+  let currentYear = 2020;
+  let birthYear = 1820;
+  const age = currentYear - birthYear;
+  const gravity = 9.81;
+  const mass = 75;
 
   return (
-    <div className='app'>
+    <div className="app">
       <Age age={age} />
       <Weight weight={gravity * mass} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ### Boolean Props Türü
@@ -342,32 +342,32 @@ ReactDOM.render(<App />, rootElement)
 Bir React component'ine boolean veri türü geçirebiliriz.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const Status = (props) => {
   // kişinin durumunu kontrol etmek için üçlü operatör
-  let status = props.status ? 'Old enough to drive' : 'Too young for driving'
-  return <p>{status}</p>
-}
+  let status = props.status ? "Old enough to drive" : "Too young for driving";
+  return <p>{status}</p>;
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
-  let currentYear = 2020
-  let birthYear = 2015
-  const age = currentYear - birthYear // 15 yıl
+  let currentYear = 2020;
+  let birthYear = 2015;
+  const age = currentYear - birthYear; // 15 yıl
 
-  let status = age >= 18
+  let status = age >= 18;
 
   return (
-    <div className='app'>
+    <div className="app">
       <Status status={status} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ### Array Props Türü
@@ -375,42 +375,42 @@ ReactDOM.render(<App />, rootElement)
 Programlamada diziler ve nesneler, farklı problemleri çözmek ve verileri daha yapılandırılmış biçimde depolamak için en sık kullanılan veri yapılarıdır. Bu nedenle verilerle dizi biçiminde sıklıkla karşılaşırız. Bir component'e dizi geçirelim.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Skills = (props) => <ul>{props.skills}</ul>
+const Skills = (props) => <ul>{props.skills}</ul>;
 
 const App = () => (
-  <div className='app'>
-    <Skills skills={['HTML', 'CSS', 'JavaScript']} />
+  <div className="app">
+    <Skills skills={["HTML", "CSS", "JavaScript"]} />
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Tarayıcıdaki sonuca bakarsanız skills öğelerinin biçimlendirilmesi gerektiğini görürsünüz. Bu nedenle render etmeden önce her bir beceri arasına bir eleman eklememiz gerekir. Diziyi değiştirmek ve li öğesi eklemek için map metodunu kullanabiliriz. React'te rahat hissetmek için map, filter ve reduce gibi fonksiyonel programlama yöntemlerine hakim olmanız gerekir; değilseniz 1. Gün JavaScript tazeleyicisine geri dönün. Şimdi diziyi değiştirmek için map'i uygulayalım:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Skills Bileşeni
 const Skills = (props) => {
   // skills dizisini değiştirme
-  const skillList = props.skills.map((skill) => <li>{skill}</li>)
-  return <ul>{skillList}</ul>
-}
+  const skillList = props.skills.map((skill) => <li>{skill}</li>);
+  return <ul>{skillList}</ul>;
+};
 
 const App = () => (
-  <div className='app'>
-    <Skills skills={['HTML', 'CSS', 'JavaScript']} />
+  <div className="app">
+    <Skills skills={["HTML", "CSS", "JavaScript"]} />
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Liste ve map konusuna ilerleyen bölümlerde ayrıntılı değineceğiz. Şimdi nesneyi props olarak nasıl kullanacağımıza bakalım.
@@ -421,74 +421,74 @@ Bir React component'ine nesne olarak props geçirebiliriz. Bir örnek görelim.
 Önceki Header props'larını nesneye çevirebiliriz. Daha iyi anlamak için birkaç özelliği değiştirelim.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Header Bileşeni
 const Header = (props) => {
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{props.data.welcome}</h1>
         <h2>{props.data.title}</h2>
         <h3>{props.data.subtitle}</h3>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
-  }
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
+  );
+};
+const rootElement = document.getElementById("root");
 // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 Şimdi önceki tüm Header özelliklerini bir nesneye dönüştürelim.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 // Header Bileşeni
 const Header = (props) => {
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{props.data.welcome}</h1>
         <h2>{props.data.title}</h2>
         <h3>{props.data.subtitle}</h3>
@@ -498,31 +498,31 @@ const Header = (props) => {
         <small>{showDate(props.data.date)}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
     date: new Date(), // tarih, okunabilir bir formata dönüştürülmelidir
-  }
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Nesneyi props olarak kullandığımızda, değerlere erişmek için genellikle veriyi destructure ederiz. Destructuring kodu okumayı kolaylaştırır. Props'u destructure etmeyi yakında göreceğiz; ama önce bir React component'i için function props türüne bakalım.
@@ -532,81 +532,81 @@ Nesneyi props olarak kullandığımızda, değerlere erişmek için genellikle v
 Bir React component'ine fonksiyon türünde props geçirebiliriz. Birkaç örnek inceleyelim:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Bir button bileşeni
 
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+const Button = (props) => <button onClick={props.onClick}>{props.text}</button>;
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const sayHi = () => {
-    alert('Hi')
-  }
+    alert("Hi");
+  };
 
   return (
-    <div className='app'>
-      <Button text='Say Hi' onClick={sayHi} />
+    <div className="app">
+      <Button text="Say Hi" onClick={sayHi} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
+  );
+};
+const rootElement = document.getElementById("root");
 // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 Fonksiyonu süslü parantez içine de yazabiliriz:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Bir button bileşeni
 
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+const Button = (props) => <button onClick={props.onClick}>{props.text}</button>;
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   return (
-    <div className='app'>
-      <Button text='Say Hi' onClick={() => alert('Hi')} />
+    <div className="app">
+      <Button text="Say Hi" onClick={() => alert("Hi")} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
+  );
+};
+const rootElement = document.getElementById("root");
 // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 Şimdi farklı fonksiyonları props olarak uygulayalım:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Bir button bileşeni
 
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+const Button = (props) => <button onClick={props.onClick}>{props.text}</button>;
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
+    alert("Welcome to 30 Days Of React Challenge, 2020");
+  };
 
   return (
-    <div className='app'>
-      <Button text='Greet People' onClick={greetPeople} />
-      <Button text='Show Time' onClick={() => alert(new Date())} />
+    <div className="app">
+      <Button text="Greet People" onClick={greetPeople} />
+      <Button text="Show Time" onClick={() => alert(new Date())} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Yukarıdaki örnekte onClick, greetPeople fonksiyonunu tutan bir props'tur. HTML'de onclick, onmouseover, onhover, onkeypress gibi olay işleyicileri bulunur. React'te bu işleyiciler camelCase yazımıyla kullanılır; örneğin onClick, onMouseOver, onKeyPress gibi. React'teki olayları ilerleyen bölümlerde ayrıntılı ele alacağız.
@@ -616,54 +616,54 @@ Bir React component'inde fonksiyonun props olarak nasıl kullanılacağını dah
 Bu component, ay, gün ve yılı bir uyarı kutusu olarak gösterir:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Zamanı Ay gün, yıl formatında göstermek için fonksiyon, örn. Oct 4, 2020
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 
 // Bir button bileşeni
 
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+const Button = (props) => <button onClick={props.onClick}>{props.text}</button>;
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const handleTime = () => {
-    alert(showDate(new Date()))
-  }
+    alert(showDate(new Date()));
+  };
   const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
+    alert("Welcome to 30 Days Of React Challenge, 2020");
+  };
   return (
-    <div className='app'>
-      <Button text='show time' onClick={handleTime} />
-      <Button text='Greet People' onClick={greetPeople} />
+    <div className="app">
+      <Button text="show time" onClick={handleTime} />
+      <Button text="Greet People" onClick={greetPeople} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## Props'u Parçalama
@@ -673,38 +673,38 @@ Artık bir JavaScript ustası olduğunuzu ve dizileri ile nesneleri nasıl parç
 1. Adım adım parçalama
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 // Header Bileşeni
 const Header = (props) => {
-  const data = props.data
-  const { welcome, title, subtitle, author, date } = data
-  const { firstName, lastName } = author
+  const data = props.data;
+  const { welcome, title, subtitle, author, date } = data;
+  const { firstName, lastName } = author;
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -714,75 +714,75 @@ const Header = (props) => {
         <small>{showDate(date)}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
     date: new Date(),
-  }
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
+  );
+};
+const rootElement = document.getElementById("root");
 // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
 
 2. Tek satırda parçalama
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 // Header Bileşeni
 const Header = (props) => {
-  const data = props.data
+  const data = props.data;
   const {
     welcome,
     title,
     subtitle,
     author: { firstName, lastName },
     date,
-  } = data
+  } = data;
 
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -792,60 +792,60 @@ const Header = (props) => {
         <small>{showDate(date)}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
     date: new Date(),
-  }
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 3. Props'u parantez içinde parçalama
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 // Header Bileşeni
 const Header = ({
   data: {
@@ -858,7 +858,7 @@ const Header = ({
 }) => {
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -868,64 +868,64 @@ const Header = ({
         <small>{showDate(date)}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
     date: new Date(),
-  }
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Şimdi sahip olduğumuz tüm component'leri parçalayalım ve bir araya getirelim. Props'u genellikle üst component'ten alt component'e doğru bir component'ten diğerine geçiririz.
 Örneğin, Main component'inde techs, user, greetPeople ve handleTime props'ları, üst component olan Main'den alt component'lere (TechList ve UserCard) geçirilmiştir. Aşağıda tüm kodlar parçalanmış ve temizlenmiş haliyle yer almaktadır.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import asabenehImage from './images/asabeneh.jpg'
+import React from "react";
+import ReactDOM from "react-dom";
+import asabenehImage from "./images/asabeneh.jpg";
 
 // Ay gün yıl göstermek için fonksiyon
 
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 
 // Header Bileşeni
 const Header = ({
@@ -939,7 +939,7 @@ const Header = ({
 }) => {
   return (
     <header>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -949,25 +949,25 @@ const Header = ({
         <small>{showDate(date)}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 // TechList Bileşeni
 const TechList = ({ techs }) => {
-  const techList = techs.map((tech) => <li key={tech}>{tech}</li>)
-  return techList
-}
+  const techList = techs.map((tech) => <li key={tech}>{tech}</li>);
+  return techList;
+};
 
 // User Card Bileşeni
 const UserCard = ({ user: { firstName, lastName, image } }) => (
-  <div className='user-card'>
+  <div className="user-card">
     <img src={image} alt={firstName} />
     <h2>
       {firstName}
       {lastName}
     </h2>
   </div>
-)
+);
 
 // Bir button bileşeni
 
@@ -975,71 +975,71 @@ const Button = ({ text, onClick, style }) => (
   <button style={style} onClick={onClick}>
     {text}
   </button>
-)
+);
 
 // JavaScript Nesnesi olarak CSS stilleri
 const buttonStyles = {
-  backgroundColor: '#61dbfb',
+  backgroundColor: "#61dbfb",
   padding: 10,
-  border: 'none',
+  border: "none",
   borderRadius: 5,
   margin: 3,
-  cursor: 'pointer',
+  cursor: "pointer",
   fontSize: 18,
-  color: 'white',
-}
+  color: "white",
+};
 
 // Main Bileşeni
 const Main = ({ user, techs, greetPeople, handleTime }) => (
   <main>
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <p>Prerequisite to get started react.js:</p>
       <ul>
         <TechList techs={techs} />
       </ul>
       <UserCard user={user} />
-      <Button text='Greet People' onClick={greetPeople} style={buttonStyles} />
-      <Button text='Show Time' onClick={handleTime} style={buttonStyles} />
+      <Button text="Greet People" onClick={greetPeople} style={buttonStyles} />
+      <Button text="Show Time" onClick={handleTime} style={buttonStyles} />
     </div>
   </main>
-)
+);
 
 // Footer Bileşeni
 const Footer = ({ copyRight }) => (
   <footer>
-    <div className='footer-wrapper'>
+    <div className="footer-wrapper">
       <p>Copyright {copyRight.getFullYear()}</p>
     </div>
   </footer>
-)
+);
 
 // App, üst veya kapsayıcı bileşen
 // Fonksiyonel Bileşen
 const App = () => {
   const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
     date: new Date(), // tarih, okunabilir bir formata dönüştürülmelidir
-  }
-  const date = new Date()
-  const techs = ['HTML', 'CSS', 'JavaScript']
+  };
+  const date = new Date();
+  const techs = ["HTML", "CSS", "JavaScript"];
   // spread operatörü kullanarak data nesnesindeki author'ı user değişkenine kopyalama
-  const user = { ...data.author, image: asabenehImage }
+  const user = { ...data.author, image: asabenehImage };
 
   const handleTime = () => {
-    alert(showDate(new Date()))
-  }
+    alert(showDate(new Date()));
+  };
   const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
+    alert("Welcome to 30 Days Of React Challenge, 2020");
+  };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header data={data} />
       <Main
         user={user}
@@ -1049,10 +1049,10 @@ const App = () => {
       />
       <Footer copyRight={date} />
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## propTypes
@@ -1096,4 +1096,4 @@ propTypes konusunu ilerleyen bölümlerde ayrıntılı olarak ele alacağız.
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 4](../04_Gun_Bilesenler/04_bilesenler.md) | [Gün 6 >>](../../06_Day_Map_List_Keys/06_map_list_keys.md)
+[<< Gün 4](../04_Gun_Bilesenler/04_bilesenler.md) | [Gün 6 >>](../06_Gun_Dizi_Haritalama/06_dizi_haritalama.md)

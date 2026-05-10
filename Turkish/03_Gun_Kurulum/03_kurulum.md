@@ -7,9 +7,9 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Yazar:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> October, 2020</small>
+<small> Ekim, 2020</small>
 </sub>
 
 </div>
@@ -68,17 +68,17 @@ React'ta modüllere veya paketlere erişmek için link kullanmayız; bunun yerin
 
 ```js
 // math.js
-export const addTwo = (a, b) => a + b
-export const multiply = (a, b) => a * b
-export const subtract = (a, b) => a - b
+export const addTwo = (a, b) => a + b;
+export const multiply = (a, b) => a * b;
+export const subtract = (a, b) => a - b;
 
 export default (function doSomeMath() {
   return {
     addTwo,
     multiply,
     subtract,
-  }
-})()
+  };
+})();
 ```
 
 Şimdi _math.js_ modüllerini farklı bir dosyaya içe aktaralım:
@@ -86,16 +86,16 @@ export default (function doSomeMath() {
 ```js
 // index.js
 // doSomeMath'i math.js dosyasından uzantıyla veya uzantısız içe aktarmak için
-import doSomeMath from './math.js'
+import doSomeMath from "./math.js";
 
 // diğer modülleri içe aktarmak için
 // bu modüller varsayılan olarak dışa aktarılmadığından destructuring kullanmamız gerekiyor
-import { addTwo, multiply, subtract } from './math.js'
+import { addTwo, multiply, subtract } from "./math.js";
 
-import * as everything from './math.js' // geri kalan her şeyi içe aktarmak için
-console.log(addTwo(5, 5))
-console.log(doSomeMath.addTwo(5, 5))
-console.log(everything)
+import * as everything from "./math.js"; // geri kalan her şeyi içe aktarmak için
+console.log(addTwo(5, 5));
+console.log(doSomeMath.addTwo(5, 5));
+console.log(everything);
 ```
 
 Bundan sonra _import React from 'react'_ veya _import ReactDOM from 'react-dom'_ gördüğünüzde şaşırmayacaksınız.
@@ -188,7 +188,6 @@ Bu klasörleri ve dosyaları bilmek faydalıdır.
 - node_modules - React uygulamasının tüm gerekli node paketlerini saklar.
 
 - Public
-
   - index.html - uygulamanın tamamında sahip olduğumuz tek HTML dosyası
 
   - favicon.ico - bir simge dosyası
@@ -197,7 +196,6 @@ Bu klasörleri ve dosyaları bilmek faydalıdır.
   - robots.txt - web sitesinin web kazımasına izin verip vermediğine dair bilgi
 
 - src
-
   - App.css, index.css - farklı CSS dosyaları
   - index.js - tüm bileşenleri index.html ile bağlamaya yarayan dosya
   - App.js - genellikle sunum bileşenlerinin çoğunu içe aktardığımız dosya
@@ -223,13 +221,13 @@ Dosyaların büyük bölümünü kaldırdıktan sonra şablonun yapısı şöyle
 //index.js
 // react ve react-dom paketlerini içe aktarma
 
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
-const jsxElement = <h1>This is a JSX element</h1>
-const rootElement = document.getElementById('root')
+const jsxElement = <h1>This is a JSX element</h1>;
+const rootElement = document.getElementById("root");
 
-ReactDOM.render(jsxElement, rootElement)
+ReactDOM.render(jsxElement, rootElement);
 ```
 
 ```html
@@ -270,7 +268,7 @@ Herhangi bir hata yoksa React uygulamanız tarayıcıda başlatılacaktır.
 Daha fazla JSX elemanı yazalım ve bunları tarayıcıda render edelim. Bu ifade, h2 HTML elemanından oluşan bir JSX elemanıdır.
 
 ```js
-const title = <h2>Getting Started React</h2>
+const title = <h2>Getting Started React</h2>;
 ```
 
 Önceki JSX'e daha fazla içerik ekleyelim ve adını header olarak değiştirelim.
@@ -282,7 +280,7 @@ const header = (
     <h2>Getting Started React</h2>
     <h3>JavaScript Library</h3>
   </header>
-)
+);
 ```
 
 Bunu tarayıcıda render etmek için ReactDOM'a ihtiyacımız var.
@@ -291,8 +289,8 @@ Bunu tarayıcıda render etmek için ReactDOM'a ihtiyacımız var.
 //index.js
 // react ve react-dom paketlerini içe aktarma
 
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const header = (
   <header>
@@ -302,10 +300,10 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
-const rootElement = document.getElementById('root')
+);
+const rootElement = document.getElementById("root");
 
-ReactDOM.render(header, rootElement)
+ReactDOM.render(header, rootElement);
 ```
 
 ![JSX using create react app](../../images/rendering_more_jsx_content_create_react_app.png)
@@ -315,8 +313,8 @@ ReactDOM.render(header, rootElement)
 ```js
 //index.js
 // react ve react-dom paketlerini içe aktarma
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 // JSX element, header
 const header = (
@@ -327,7 +325,7 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
+);
 
 // JSX element, main
 const main = (
@@ -339,14 +337,14 @@ const main = (
       <li>JavaScript</li>
     </ul>
   </main>
-)
+);
 
 // JSX element, footer
 const footer = (
   <footer>
     <p>Copyright 2020</p>
   </footer>
-)
+);
 
 // JSX element, app, a container or a parent
 const app = (
@@ -355,12 +353,12 @@ const app = (
     {main}
     {footer}
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
 // ReactDOM'un render metodu iki argüman alır
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
 // ya da
 //  ReactDOM.render([header, main, footer], rootElement)
 ```
@@ -373,20 +371,20 @@ JSX elemanlarına stil uygulayalım. JSX'i satır içi, dahili veya harici CSS s
 
 ```js
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
 const headerStyles = {
-  backgroundColor: '#61DBFB',
-  fontFamily: 'Helvetica Neue',
+  backgroundColor: "#61DBFB",
+  fontFamily: "Helvetica Neue",
   padding: 25,
   lineHeight: 1.5,
-}
+};
 
 // JSX element, header
 const header = (
   <header style={headerStyles}>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>Welcome to 30 Days Of React</h1>
       <h2>Getting Started React</h2>
       <h3>JavaScript Library</h3>
@@ -394,12 +392,12 @@ const header = (
       <small>Oct 2, 2020</small>
     </div>
   </header>
-)
+);
 
 // JSX element, main
 const mainStyles = {
-  backgroundColor: '#F3F0F5',
-}
+  backgroundColor: "#F3F0F5",
+};
 const main = (
   <main style={mainStyles}>
     <p>Prerequisite to get started react.js:</p>
@@ -409,30 +407,30 @@ const main = (
       <li>JavaScript</li>
     </ul>
   </main>
-)
+);
 
 const footerStyles = {
-  backgroundColor: '#61DBFB',
-}
+  backgroundColor: "#61DBFB",
+};
 // JSX element, footer
 const footer = (
   <footer style={footerStyles}>
     <p>Copyright 2020</p>
   </footer>
-)
+);
 
 // JSX element, app
 const app = (
-  <div className='app'>
+  <div className="app">
     {header}
     {main}
     {footer}
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
 ```
 
 ![Inline styling JSX](../../images/styling_jsx_inline_create_react_app.png)
@@ -441,12 +439,12 @@ ReactDOM.render(app, rootElement)
 
 ```js
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 // JSX element, header
 const header = (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>Welcome to 30 Days Of React</h1>
       <h2>Getting Started React</h2>
       <h3>JavaScript Library</h3>
@@ -454,14 +452,14 @@ const header = (
       <small>Date: Oct 1, 2020</small>
     </div>
   </header>
-)
+);
 
 // JSX element, main
 const main = (
   <main>
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <p>
-        Prerequisite to get started{' '}
+        Prerequisite to get started{" "}
         <strong>
           <em>react.js</em>
         </strong>
@@ -474,29 +472,29 @@ const main = (
       </ul>
     </div>
   </main>
-)
+);
 
 // JSX element, footer
 const footer = (
   <footer>
-    <div className='footer-wrapper'>
+    <div className="footer-wrapper">
       <p>Copyright 2020</p>
     </div>
   </footer>
-)
+);
 
 // JSX element, app
 const app = (
-  <div className='app'>
+  <div className="app">
     {header}
     {main}
     {footer}
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
 ```
 
 ![Inline styling JSX](../../images/js_internal_style_create_react_app.png)
@@ -505,24 +503,24 @@ ReactDOM.render(app, rootElement)
 
 ```js
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 // HTML belgesinden kök elemanı almak için
 
 // JSX element, header
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
+const welcome = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
 const author = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
-}
-const date = 'Oct 2, 2020'
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+const date = "Oct 2, 2020";
 
 // JSX element, header
 const header = (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
@@ -532,37 +530,37 @@ const header = (
       <small>Date: {date}</small>
     </div>
   </header>
-)
+);
 
-const numOne = 3
-const numTwo = 2
+const numOne = 3;
+const numTwo = 2;
 
 const result = (
   <p>
     {numOne} + {numTwo} = {numOne + numTwo}
   </p>
-)
+);
 
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
+const yearBorn = 1820;
+const currentYear = new Date().getFullYear();
+const age = currentYear - yearBorn;
 const personAge = (
   <p>
-    {' '}
+    {" "}
     {author.firstName} {author.lastName} is {age} years old
   </p>
-)
+);
 
 // JSX element, main
-const techs = ['HTML', 'CSS', 'JavaScript']
-const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const techs = ["HTML", "CSS", "JavaScript"];
+const techsFormatted = techs.map((tech) => <li>{tech}</li>);
 
 // JSX element, main
 const main = (
   <main>
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <p>
-        Prerequisite to get started{' '}
+        Prerequisite to get started{" "}
         <strong>
           <em>react.js</em>
         </strong>
@@ -573,31 +571,31 @@ const main = (
       {personAge}
     </div>
   </main>
-)
+);
 
-const copyRight = 'Copyright 2020'
+const copyRight = "Copyright 2020";
 
 // JSX element, footer
 const footer = (
   <footer>
-    <div className='footer-wrapper'>
+    <div className="footer-wrapper">
       <p>{copyRight}</p>
     </div>
   </footer>
-)
+);
 
 // JSX element, app
 const app = (
-  <div className='app'>
+  <div className="app">
     {header}
     {main}
     {footer}
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
 ```
 
 ![Inline styling JSX](../../images/inecting_data_to_jsx_create_react_app.png)
@@ -609,19 +607,19 @@ src klasörü içinde images adında bir klasör oluşturun ve içine bir görse
 
 ```js
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import asabenehImage from './images/asabeneh.jpg'
+import React from "react";
+import ReactDOM from "react-dom";
+import asabenehImage from "./images/asabeneh.jpg";
 
 const user = (
   <div>
-    <img src={asabenehImage} alt='asabeneh image' />
+    <img src={asabenehImage} alt="asabeneh image" />
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(user, rootElement)
+ReactDOM.render(user, rootElement);
 ```
 
 ![Rendering image](../../images/rendering_image.png)
@@ -630,24 +628,24 @@ user'ı ana JSX elemanının içine enjekte edip sonucu görelim:
 
 ```js
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 // HTML belgesinden kök elemanı almak için
-import asabenehImage from './images/asabeneh.jpg'
+import asabenehImage from "./images/asabeneh.jpg";
 // JSX element, header
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
+const welcome = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
 const author = {
-  firstName: 'Asabeneh',
-  lastName: 'Yetayeh',
-}
-const date = 'Oct 2, 2020'
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+const date = "Oct 2, 2020";
 
 // JSX element, header
 const header = (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
@@ -657,43 +655,43 @@ const header = (
       <small>Date: {date}</small>
     </div>
   </header>
-)
+);
 
-const numOne = 3
-const numTwo = 2
+const numOne = 3;
+const numTwo = 2;
 
 const result = (
   <p>
     {numOne} + {numTwo} = {numOne + numTwo}
   </p>
-)
+);
 
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
+const yearBorn = 1820;
+const currentYear = new Date().getFullYear();
+const age = currentYear - yearBorn;
 const personAge = (
   <p>
-    {' '}
+    {" "}
     {author.firstName} {author.lastName} is {age} years old
   </p>
-)
+);
 
 // JSX element, main
-const techs = ['HTML', 'CSS', 'JavaScript']
-const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const techs = ["HTML", "CSS", "JavaScript"];
+const techsFormatted = techs.map((tech) => <li>{tech}</li>);
 
 const user = (
   <div>
-    <img src={asabenehImage} alt='asabeneh image' />
+    <img src={asabenehImage} alt="asabeneh image" />
   </div>
-)
+);
 
 // JSX element, main
 const main = (
   <main>
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <p>
-        Prerequisite to get started{' '}
+        Prerequisite to get started{" "}
         <strong>
           <em>react.js</em>
         </strong>
@@ -705,31 +703,31 @@ const main = (
       {user}
     </div>
   </main>
-)
+);
 
-const copyRight = 'Copyright 2020'
+const copyRight = "Copyright 2020";
 
 // JSX element, footer
 const footer = (
   <footer>
-    <div className='footer-wrapper'>
+    <div className="footer-wrapper">
       <p>{copyRight}</p>
     </div>
   </footer>
-)
+);
 
 // JSX element, app
 const app = (
-  <div className='app'>
+  <div className="app">
     {header}
     {main}
     {footer}
   </div>
-)
+);
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 // JSX elemanını ReactDOM paketi kullanarak render ediyoruz
-ReactDOM.render(app, rootElement)
+ReactDOM.render(app, rootElement);
 ```
 
 ![All JSX together final](../../images/all_jsx_final.png)
