@@ -206,8 +206,6 @@ class App extends React.Component {
   };
 
   render() {
-    // state değerine erişme
-    const count = this.state.count;
     return (
       <div className="App">
         <h1>30 Days Of React</h1>
@@ -215,7 +213,7 @@ class App extends React.Component {
           <img src={this.state.image} alt="animal" />
         </div>
 
-        <button onClick={this.changeAnimal} class="btn btn-add">
+        <button onClick={this.changeAnimal} className="btn btn-add">
           Change
         </button>
       </div>

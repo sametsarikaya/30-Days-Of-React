@@ -1599,6 +1599,6 @@ Harika bir iş çıkardınız. 2. gün meydan okumalarını tamamladınız ve b�
 
 1. JSX elementi oluşturmayı ve dinamik veri (string, sayı, boolean, dizi, nesne) enjekte etmeyi pratik yapın
 
-TEBRIKLER!
+TEBRİKLER!
 
 [<< Gün 1](../01_Gun_JavaScript_Tazeleyici/01_javascript_tazeleyici.md) | [Gün 3 >>](../03_Gun_Kurulum/03_kurulum.md)

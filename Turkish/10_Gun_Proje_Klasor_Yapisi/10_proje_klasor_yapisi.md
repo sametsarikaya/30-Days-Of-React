@@ -65,7 +65,7 @@ Yukarıdaki kod parçasında App component'i bulunmaktadır. App component'ini k
 
 ```js
 // src/App.js
-import React from 'react
+import React from 'react'
 const App = () => <h1>Welcome to 30 Days Of React</h1>
 ```
 
@@ -75,7 +75,7 @@ Named export yapmak için _let_ veya _const_'tan önce sadece _export_ anahtar k
 
 ```js
 // src/App.js
-import React from 'react
+import React from 'react'
 
 // ok fonksiyonunda named export
 export const App = () => <h1>Welcome to 30 Days Of React</h1>
@@ -85,10 +85,10 @@ Normal fonksiyon tanımlamasında dışa aktarma:
 
 ```js
 // src/App.js
-import React from 'react
+import React from 'react'
 // normal fonksiyonda named export, function declaration
-export function App () {
-return <h1>Welcome to 30 Days Of React</h1>
+export function App() {
+  return <h1>Welcome to 30 Days Of React</h1>
 }
 ```
 
@@ -108,17 +108,17 @@ Named export'u gördük; şimdi default export ile uygulayalım. Bunu iki şekil
 
 ```js
 // src/App.js
-import React from 'react
+import React from 'react'
 // ok fonksiyonunda default export
-export default const App = () => <h1>Welcome to 30 Days Of React</h1>
-
+const App = () => <h1>Welcome to 30 Days Of React</h1>
+export default App
 ```
 
 ```js
 // src/App.js
-import React from 'react
+import React from 'react'
 // default export, normal fonksiyon
-export default function App () {
+export default function App() {
   return <h1>Welcome to 30 Days Of React</h1>
 }
 ```
@@ -126,7 +126,7 @@ export default function App () {
 ```js
 // src/App.js
 // Çoğu durumda önerilen yöntem
-import React from 'react
+import React from 'react'
 const App = () => <h1>Welcome to 30 Days Of React</h1>
 export default App
 ```
@@ -199,7 +199,7 @@ const Country = ({
         <img src={flag} alt={name} />
       </div>
       <h3 className="country_name">{name.toUpperCase()}</h3>
-      <div class="country_text">
+      <div className="country_text">
         <p>{formatedCapital}</p>
         <p>
           <span>{formatLanguage}: </span>
@@ -411,7 +411,6 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        {this.state.backgroundColor}
         <Header data={data} />
 
         <Main
@@ -445,16 +444,16 @@ src
    -auth
     -Signup.js
     -Signin.js
-    -Forgotpassword.js
-    -Resetpassord.js
+    -ForgotPassword.js
+    -ResetPassword.js
   header
    -Header.js
   footer
    -Footer.js
   assets
    -images
-   -icnons
-   - fonts
+   -icons
+   -fonts
   styles
    -button.js
    -button.scss
@@ -474,7 +473,7 @@ src içinde components dizini oluşturalım; components içinde header dizini ol
 // src/components/header/Header.js
 import React from "react";
 
-const Header = (props) => {
+const Header = ({ data: { welcome, title, subtitle, author: { firstName, lastName }, date } }) => {
   return (
     <header>
       <div className="header-wrapper">

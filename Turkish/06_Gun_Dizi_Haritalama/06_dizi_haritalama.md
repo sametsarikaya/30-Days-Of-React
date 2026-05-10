@@ -279,7 +279,7 @@ ReactDOM.render(<App />, rootElement);
 
 ## Egzersizler: Seviye 3
 
-1. Verilen [veriyi](../06_Day_Map_List_Keys/06_map_list_keys_boilerplate/src/data/ten_most_highest_populations.js) kullanarak aşağıdaki çubuk grafiğini oluşturun.
+1. Verilen [veriyi](../../06_Day_Map_List_Keys/06_map_list_keys_boilerplate/src/data/ten_most_highest_populations.js) kullanarak aşağıdaki çubuk grafiğini oluşturun.
 
 ![Ten most highest populations](../../images/day_6_ten_highest_populations_exercise.png)
 
