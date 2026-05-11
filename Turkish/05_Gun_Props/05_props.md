@@ -75,7 +75,7 @@ const User = (props) => {
   )
 }
 // bileşeni çağırma, bu bileşenin üç özelliği var ve bunları props olarak adlandırıyoruz: firstName, lastName, country
-<User firstName = 'Asabeneh', lastName='Yetayeh' country = 'Finland' />
+<User firstName='Asabeneh' lastName='Yetayeh' country='Finland' />
 ```
 
 Bir önceki bölümde verileri şu şekilde enjekte etmiştik; bugün bu verileri props'a dönüştüreceğiz.
