@@ -36,3 +36,5 @@
 | 11    |              [Olaylar](./11_Gun_Olaylar/11_olaylar.md)              |
 | 12    |              [Formlar](./12_Gun_Formlar/12_formlar.md)              |
 | 13    |  [Kontrollü ve Kontrolsüz Input](./13_Gun_Kontrollü_ve_Kontrolsüz_Input/13_kontrolsuz_input.md)  |
+| 14    |  [Bileşen Yaşam Döngüleri](./14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md)  |
+| 15    |  [Üçüncü Taraf Paketler](./15_Gun_Üçüncü_Taraf_Paketler/15_ucuncu_taraf_paketler.md)  |

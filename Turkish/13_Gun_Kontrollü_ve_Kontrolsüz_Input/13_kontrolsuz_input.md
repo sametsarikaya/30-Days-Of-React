@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Gün 12](../12_Gun_Formlar/12_formlar.md) | [Gün 14 >>](../../14_Day_Component_Life_Cycles/14_component_life_cycles.md)
+[<< Gün 12](../12_Gun_Formlar/12_formlar.md) | [Gün 14 >>](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_13.jpg)
 
@@ -174,4 +174,4 @@ ReactDOM.render(<App />, rootElement)
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 12](../12_Gun_Formlar/12_formlar.md) | [Gün 14 >>](../../14_Day_Component_Life_Cycles/14_component_life_cycles.md)
+[<< Gün 12](../12_Gun_Formlar/12_formlar.md) | [Gün 14 >>](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md)
