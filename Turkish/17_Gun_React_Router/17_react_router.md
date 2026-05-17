@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Gün 16](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md) | [Gün 18 >>](../../18_Fetch_And_Axios/18_fetch_axios.md)
+[<< Gün 16](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md) | [Gün 18 >>](../18_Gun_Fetch_ve_Axios/18_fetch_ve_axios.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_17.jpg)
 
@@ -1027,4 +1027,4 @@ Yakında
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 16](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md) | [Gün 18 >>](../../18_Fetch_And_Axios/18_fetch_axios.md)
+[<< Gün 16](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md) | [Gün 18 >>](../18_Gun_Fetch_ve_Axios/18_fetch_ve_axios.md)

@@ -40,3 +40,5 @@
 | 15    |  [Üçüncü Taraf Paketler](./15_Gun_Üçüncü_Taraf_Paketler/15_ucuncu_taraf_paketler.md)  |
 | 16    |  [Yüksek Düzey Bileşen](./16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md)  |
 | 17    |  [React Router](./17_Gun_React_Router/17_react_router.md)  |
+| 18    |  [Fetch ve Axios](./18_Gun_Fetch_ve_Axios/18_fetch_ve_axios.md)  |
+| 19    |  [Projeler](./19_Gun_Projeler/19_projeler.md)  |
