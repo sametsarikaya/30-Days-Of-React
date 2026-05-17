@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Gün 9](../09_Gun_Kosullu_Render/09_kosullu_render.md) | [Gün 11 >>](../../11_Day_Events/11_events.md)
+[<< Gün 9](../09_Gun_Kosullu_Render/09_kosullu_render.md) | [Gün 11 >>](../11_Gun_Olaylar/11_olaylar.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_10.jpg)
 
@@ -65,8 +65,8 @@ Yukarıdaki kod parçasında App component'i bulunmaktadır. App component'ini k
 
 ```js
 // src/App.js
-import React from 'react'
-const App = () => <h1>Welcome to 30 Days Of React</h1>
+import React from "react";
+const App = () => <h1>Welcome to 30 Days Of React</h1>;
 ```
 
 Component'i başka bir dosyaya import etmek için dışa aktarmamız (export etmemiz) gerekiyor. Default veya named (isimli) export olarak dışa aktarabiliriz. Bir dosyada bir default export ve çok sayıda named export yapılabilir. Önce named export ile uygulayalım, ardından default export'a geçelim.
@@ -75,20 +75,20 @@ Named export yapmak için _let_ veya _const_'tan önce sadece _export_ anahtar k
 
 ```js
 // src/App.js
-import React from 'react'
+import React from "react";
 
 // ok fonksiyonunda named export
-export const App = () => <h1>Welcome to 30 Days Of React</h1>
+export const App = () => <h1>Welcome to 30 Days Of React</h1>;
 ```
 
 Normal fonksiyon tanımlamasında dışa aktarma:
 
 ```js
 // src/App.js
-import React from 'react'
+import React from "react";
 // normal fonksiyonda named export, function declaration
 export function App() {
-  return <h1>Welcome to 30 Days Of React</h1>
+  return <h1>Welcome to 30 Days Of React</h1>;
 }
 ```
 
@@ -108,27 +108,27 @@ Named export'u gördük; şimdi default export ile uygulayalım. Bunu iki şekil
 
 ```js
 // src/App.js
-import React from 'react'
+import React from "react";
 // ok fonksiyonunda default export
-const App = () => <h1>Welcome to 30 Days Of React</h1>
-export default App
+const App = () => <h1>Welcome to 30 Days Of React</h1>;
+export default App;
 ```
 
 ```js
 // src/App.js
-import React from 'react'
+import React from "react";
 // default export, normal fonksiyon
 export default function App() {
-  return <h1>Welcome to 30 Days Of React</h1>
+  return <h1>Welcome to 30 Days Of React</h1>;
 }
 ```
 
 ```js
 // src/App.js
 // Çoğu durumda önerilen yöntem
-import React from 'react'
-const App = () => <h1>Welcome to 30 Days Of React</h1>
-export default App
+import React from "react";
+const App = () => <h1>Welcome to 30 Days Of React</h1>;
+export default App;
 ```
 
 Bir component default olarak dışa aktarılmışsa import ederken süslü paranteze gerek yoktur:
@@ -473,7 +473,15 @@ src içinde components dizini oluşturalım; components içinde header dizini ol
 // src/components/header/Header.js
 import React from "react";
 
-const Header = ({ data: { welcome, title, subtitle, author: { firstName, lastName }, date } }) => {
+const Header = ({
+  data: {
+    welcome,
+    title,
+    subtitle,
+    author: { firstName, lastName },
+    date,
+  },
+}) => {
   return (
     <header>
       <div className="header-wrapper">
@@ -616,4 +624,4 @@ Yakında
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 9](../09_Gun_Kosullu_Render/09_kosullu_render.md) | [Gün 11 >>](../../11_Day_Events/11_events.md)
+[<< Gün 9](../09_Gun_Kosullu_Render/09_kosullu_render.md) | [Gün 11 >>](../11_Gun_Olaylar/11_olaylar.md)

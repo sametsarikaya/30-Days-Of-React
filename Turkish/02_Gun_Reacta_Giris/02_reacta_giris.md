@@ -111,9 +111,9 @@ JSX, JavaScript XML anlamına gelir. JSX, JavaScript kodu içinde HTML elementle
 // JSX sözdizimi
 // JSX ile tırnak işareti kullanmamıza gerek yoktur
 
-const jsxElement = <h1>I am a JSX element</h1>
-const welcome = <h1>Welcome to 30 Days of React Challenge</h1>
-const data = <small>Oct 2, 2020</small>
+const jsxElement = <h1>I am a JSX element</h1>;
+const welcome = <h1>Welcome to 30 Days of React Challenge</h1>;
+const data = <small>Oct 2, 2020</small>;
 ```
 
 Yukarıdaki garip görünen kod, JavaScript gibi görünse de JavaScript değildir; HTML gibi görünse de tamamen bir HTML elementi değildir. JavaScript ile HTML elementlerinin bir karışımıdır. JSX, JavaScript içinde HTML kullanmamıza olanak tanır. Yukarıdaki JSX'teki HTML elementleri _h1_ ve _small_'dur.
@@ -125,13 +125,13 @@ Yukarıdaki örnekte gördüğünüz gibi, JSX'in JavaScript ve HTML'e benzer bi
 Bu JSX elementi yalnızca bir HTML elementine sahiptir: _h1_.
 
 ```js
-const jsxElement = <h1>I am a JSX element</h1> // JS ile HTML
+const jsxElement = <h1>I am a JSX element</h1>; // JS ile HTML
 ```
 
 Şimdi title adlı yeni bir değişken ve _h2_ içinde content tanımlayarak daha fazla JSX elementi oluşturalım.
 
 ```js
-const title = <h2>Getting Started React</h2>
+const title = <h2>Getting Started React</h2>;
 ```
 
 Bu JSX elementine ek HTML elementleri ekleyerek alt başlıklar ve diğer içerikler ekleyelim. Geçerli bir JSX elementi oluşturmak için her HTML elementinin bir dış HTML elementi tarafından sarılması gerekir. JSX elementimiz uygulamanın başlık kısmının neredeyse tamamını içerdiği için title değişkeninin adı da header olarak değiştirilmelidir.
@@ -143,7 +143,7 @@ const header = (
     <h2>Getting Started React</h2>
     <h3>JavaScript Library</h3>
   </header>
-)
+);
 ```
 
 Yazar adı ve yılı görüntülemek için daha fazla element ekleyelim.
@@ -157,7 +157,7 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
+);
 ```
 
 Gördüğünüz gibi _header_ elementi, tüm iç HTML elementlerinin üst elementidir ve JSX'in bir dış üst element tarafından sarılması gerekir. _header_ HTML elementi veya başka bir üst HTML elementi olmadan yukarıdaki JSX geçersizdir.
@@ -247,7 +247,7 @@ Babel kütüphanesi belgemize bağlandı ve artık kullanabiliriz. Sonraki adım
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      console.log(React)
+      console.log(React);
     </script>
   </body>
 </html>
@@ -280,14 +280,14 @@ Artık JSX ve JSX elementini biliyorsunuz. JSX elementini tarayıcıda render et
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
 
       // JSX elementi
-      const jsxElement = <h1>I am a JSX element</h1>
+      const jsxElement = <h1>I am a JSX element</h1>;
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
       // ReactDOM'un render metodu var ve render metodu iki argüman alır
-      ReactDOM.render(jsxElement, rootElement)
+      ReactDOM.render(jsxElement, rootElement);
     </script>
   </body>
 </html>
@@ -321,7 +321,7 @@ Daha fazla içerik render edelim. Daha fazla içerik render etmek için JSX elem
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
 
       // JSX elementi
       const header = (
@@ -332,11 +332,11 @@ Daha fazla içerik render edelim. Daha fazla içerik render etmek için JSX elem
           <p>Asabeneh Yetayeh</p>
           <small>Oct 2, 2020</small>
         </header>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
       // ReactDOM'un render metodu var ve render metodu iki argüman alır
-      ReactDOM.render(header, rootElement)
+      ReactDOM.render(header, rootElement);
     </script>
   </body>
 </html>
@@ -359,7 +359,7 @@ const main = (
       <li>JavaScript</li>
     </ul>
   </main>
-)
+);
 ```
 
 Web sitesinin alt bilgi kısmı için JSX elementi.
@@ -370,7 +370,7 @@ const footer = (
   <footer>
     <p>Copyright 2020</p>
   </footer>
-)
+);
 ```
 
 Artık üç JSX elementimiz var: header, main ve footer. Üç JSX elementinin tamamını render etmenin en iyi yolu, hepsini bir üst JSX elementi içine sarmak veya bir diziye koymaktır. Bir JSX elementini başka bir JSX elementi içine dahil etmek için süslü parantez {} kullanır ve içine JSX'in adını yazarız.
@@ -385,7 +385,7 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
+);
 
 // Web sitesinin ana içerik kısmı için JSX elementi
 const main = (
@@ -397,14 +397,14 @@ const main = (
       <li>JavaScript</li>
     </ul>
   </main>
-)
+);
 
 // Web sitesinin alt bilgi kısmı için JSX elementi
 const footer = (
   <footer>
     <p>Copyright 2020</p>
   </footer>
-)
+);
 
 // Tümünü içeren JSX elementi, bir kapsayıcı veya üst element
 const app = (
@@ -413,7 +413,7 @@ const app = (
     {main}
     {footer}
   </div>
-)
+);
 ```
 
 Şimdi her şeyi bir araya getirelim ve tarayıcıya render edelim. [Code pen'de canlı](https://codepen.io/Asabeneh/full/MWwbYWg).
@@ -441,7 +441,7 @@ const app = (
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
 
       // JSX elementi, header
       const header = (
@@ -452,7 +452,7 @@ const app = (
           <p>Asabeneh Yetayeh</p>
           <small>Oct 2, 2020</small>
         </header>
-      )
+      );
 
       // JSX elementi, main
       const main = (
@@ -464,14 +464,14 @@ const app = (
             <li>JavaScript</li>
           </ul>
         </main>
-      )
+      );
 
       // JSX elementi, footer
       const footer = (
         <footer>
           <p>Copyright 2020</p>
         </footer>
-      )
+      );
 
       // JSX elementi, app, bir kapsayıcı veya üst element
       const app = (
@@ -480,11 +480,11 @@ const app = (
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
       // ReactDOM'un render metodu var ve render metodu iki argüman alır
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
       // veya
       //  ReactDOM.render([header, main, footer], rootElement)
     </script>
@@ -509,7 +509,7 @@ Bir JSX elementine stil eklemek için satır içi stil veya className kullanır�
 ```js
 const header = (
   <header
-    style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
+    style={{ border: "2px solid orange", color: "black", fontSize: "18px" }}
   >
     <h1>Welcome to 30 Days Of React</h1>
     <h2>Getting Started React</h2>
@@ -517,11 +517,11 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
+);
 
 // veya şu şekilde de yazabiliriz
 
-const style = { border: '2px solid orange', color: 'black', fontSize: '18px' }
+const style = { border: "2px solid orange", color: "black", fontSize: "18px" };
 
 const header = (
   <header style={style}>
@@ -531,7 +531,7 @@ const header = (
     <p>Asabeneh Yetayeh</p>
     <small>Oct 2, 2020</small>
   </header>
-)
+);
 ```
 
 Uygulamanızı geliştirirken her şeyin yolunda gidip gitmediğini kontrol etmek için tarayıcı konsolunu açık tutmak iyi bir pratiktir.
@@ -541,13 +541,13 @@ Oluşturduğumuz tüm JSX elementlerini stilleyelim: header, main ve footer. Uyg
 JSX elementinde class yerine className kullanırız, çünkü class JavaScript'te ayrılmış bir sözcüktür. Benzer şekilde, label etiketinde for yerine htmlFor kullanılır. Aşağıdaki örneğe bakın.
 
 ```js
-const title = <h1 className='title'>Getting Started React</h1>
+const title = <h1 className="title">Getting Started React</h1>;
 const inputField = (
   <div>
-    <label htmlFor='firstname'>First Name</label>
-    <input type='text' id='firstname' placeholder='First Name' />
+    <label htmlFor="firstname">First Name</label>
+    <input type="text" id="firstname" placeholder="First Name" />
   </div>
-)
+);
 ```
 
 Input elementinde kullanılan id, stil amaçlı değil; label'ı input alanına bağlamak için kullanılmaktadır.
@@ -581,20 +581,20 @@ Artık satır içi stil ve className kullanımını öğrendiniz. Tüm JSX eleme
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
 
       // stil
       const headerStyles = {
-        backgroundColor: '#61DBFB',
-        fontFamily: 'Helvetica Neue',
+        backgroundColor: "#61DBFB",
+        fontFamily: "Helvetica Neue",
         padding: 25,
         lineHeight: 1.5,
-      }
+      };
 
       // JSX elementi, header
       const header = (
         <header style={headerStyles}>
-          <div className='header-wrapper'>
+          <div className="header-wrapper">
             <h1>Welcome to 30 Days Of React</h1>
             <h2>Getting Started React</h2>
             <h3>JavaScript Library</h3>
@@ -602,12 +602,12 @@ Artık satır içi stil ve className kullanımını öğrendiniz. Tüm JSX eleme
             <small>Oct 2, 2020</small>
           </div>
         </header>
-      )
+      );
 
       // JSX elementi, main
       const mainStyles = {
-        backgroundColor: '#F3F0F5',
-      }
+        backgroundColor: "#F3F0F5",
+      };
       const main = (
         <main style={mainStyles}>
           <p>Prerequisite to get started react.js:</p>
@@ -617,29 +617,29 @@ Artık satır içi stil ve className kullanımını öğrendiniz. Tüm JSX eleme
             <li>JavaScript</li>
           </ul>
         </main>
-      )
+      );
 
       const footerStyles = {
-        backgroundColor: '#61DBFB',
-      }
+        backgroundColor: "#61DBFB",
+      };
       // JSX elementi, footer
       const footer = (
         <footer style={footerStyles}>
           <p>Copyright 2020</p>
         </footer>
-      )
+      );
 
       // JSX elementi, app
       const app = (
-        <div className='app'>
+        <div className="app">
           {header}
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
@@ -673,7 +673,7 @@ Stil nesnesi kullanmak yerine normal stil yöntemini kullanmak, yukarıdakinden 
       body {
         height: 100%;
         line-height: 1.5;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 300;
         color: black;
       }
@@ -756,12 +756,12 @@ Stil nesnesi kullanmak yerine normal stil yöntemini kullanmak, yukarıdakinden 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
 
       // JSX elementi, header
       const header = (
         <header>
-          <div className='header-wrapper'>
+          <div className="header-wrapper">
             <h1>Welcome to 30 Days Of React</h1>
             <h2>Getting Started React</h2>
             <h3>JavaScript Library</h3>
@@ -769,14 +769,14 @@ Stil nesnesi kullanmak yerine normal stil yöntemini kullanmak, yukarıdakinden 
             <small>Date: Oct 1, 2020</small>
           </div>
         </header>
-      )
+      );
 
       // JSX elementi, main
       const main = (
         <main>
-          <div className='main-wrapper'>
+          <div className="main-wrapper">
             <p>
-              Prerequisite to get started{' '}
+              Prerequisite to get started{" "}
               <strong>
                 <em>react.js</em>
               </strong>
@@ -789,28 +789,28 @@ Stil nesnesi kullanmak yerine normal stil yöntemini kullanmak, yukarıdakinden 
             </ul>
           </div>
         </main>
-      )
+      );
 
       // JSX elementi, footer
       const footer = (
         <footer>
-          <div className='footer-wrapper'>
+          <div className="footer-wrapper">
             <p>Copyright 2020</p>
           </div>
         </footer>
-      )
+      );
 
       // JSX elementi, app
       const app = (
-        <div className='app'>
+        <div className="app">
           {header}
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
@@ -823,17 +823,17 @@ Stil nesnesi kullanmak yerine normal stil yöntemini kullanmak, yukarıdakinden 
 Şimdiye kadar JSX elementlerinde statik veriler kullandık; ancak farklı veri türlerini dinamik veri olarak da geçirebiliriz. Dinamik veriler; string, sayı, boolean, dizi veya nesne olabilir. Her veri türünü adım adım inceleyelim. JSX'e veri enjekte etmek için {} parantezini kullanırız.
 
 ```js
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const authorFirstName = 'Asabeneh'
-const authorLastName = 'Yetayeh'
-const date = 'Oct 1, 2020'
+const welcome = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
+const authorFirstName = "Asabeneh";
+const authorLastName = "Yetayeh";
+const date = "Oct 1, 2020";
 
 // JSX elementi, header
 const header = (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
@@ -843,7 +843,7 @@ const header = (
       <small>Date: {date}</small>
     </div>
   </header>
-)
+);
 ```
 
 Header JSX elementine benzer şekilde, main ve footer JSX elementlerine de veri enjeksiyonu uygulayabiliriz.
@@ -853,19 +853,19 @@ Header JSX elementine benzer şekilde, main ve footer JSX elementlerine de veri 
 Bu bölümde yalnızca string'ler enjekte edeceğiz
 
 ```js
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const firstName = 'Asabeneh'
-const lastName = 'Yetayeh'
-const date = 'Oct 2, 2020'
+const welcome = "Welcome to 30 Days Of React";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
+const firstName = "Asabeneh";
+const lastName = "Yetayeh";
+const date = "Oct 2, 2020";
 
 // JSX elementi, header
 
 // JSX elementi, header
 const header = (
   <header>
-    <div className='header-wrapper'>
+    <div className="header-wrapper">
       <h1>{welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
@@ -875,25 +875,25 @@ const header = (
       <small>Date: {date}</small>
     </div>
   </header>
-)
+);
 ```
 
 ##### JSX Elementine Sayı Enjekte Etme
 
 ```js
-const numOne = 3
-const numTwo = 2
+const numOne = 3;
+const numTwo = 2;
 
 const result = (
   <p>
     {numOne} + {numTwo} = {numOne + numTwo}
   </p>
-)
+);
 
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = <p> {age}</p>
+const yearBorn = 1820;
+const currentYear = new Date().getFullYear();
+const age = currentYear - yearBorn;
+const personAge = <p> {age}</p>;
 ```
 
 Yukarıdaki örnekte gördüğünüz gibi, aritmetik hesaplamalar ve üçlü işlemler yapmak mümkündür.
@@ -903,14 +903,14 @@ Yukarıdaki örnekte gördüğünüz gibi, aritmetik hesaplamalar ve üçlü iş
 Dizi örneği vermek için HTML, CSS, JavaScript'i bir diziye çevirelim ve aşağıdaki main JSX elementine enjekte edelim. Daha sonra liste render etme bölümünde daha ayrıntılı ele alacağız.
 
 ```js
-const techs = ['HTML', 'CSS', 'JavaScript']
+const techs = ["HTML", "CSS", "JavaScript"];
 
 // JSX elementi, main
 const main = (
   <main>
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <p>
-        Prerequisite to get started{' '}
+        Prerequisite to get started{" "}
         <strong>
           <em>react.js</em>
         </strong>
@@ -919,7 +919,7 @@ const main = (
       <ul>{techs}</ul>
     </div>
   </main>
-)
+);
 ```
 
 ##### JSX Elementine Nesne Enjekte Etme
@@ -952,7 +952,7 @@ JSX'e string, sayı, boolean ve dizi verisi enjekte edebiliriz; ancak doğrudan 
       body {
         height: 100%;
         line-height: 1.5;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 300;
         color: black;
       }
@@ -1034,21 +1034,21 @@ JSX'e string, sayı, boolean ve dizi verisi enjekte edebiliriz; ancak doğrudan 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
       // JSX elementi, header
-      const welcome = 'Welcome to 30 Days Of React'
-      const title = 'Getting Started React'
-      const subtitle = 'JavaScript Library'
+      const welcome = "Welcome to 30 Days Of React";
+      const title = "Getting Started React";
+      const subtitle = "JavaScript Library";
       const author = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetayeh',
-      }
-      const date = 'Oct 2, 2020'
+        firstName: "Asabeneh",
+        lastName: "Yetayeh",
+      };
+      const date = "Oct 2, 2020";
 
       // JSX elementi, header
       const header = (
         <header>
-          <div className='header-wrapper'>
+          <div className="header-wrapper">
             <h1>{welcome}</h1>
             <h2>{title}</h2>
             <h3>{subtitle}</h3>
@@ -1058,36 +1058,36 @@ JSX'e string, sayı, boolean ve dizi verisi enjekte edebiliriz; ancak doğrudan 
             <small>Date: {date}</small>
           </div>
         </header>
-      )
+      );
 
-      const numOne = 3
-      const numTwo = 2
+      const numOne = 3;
+      const numTwo = 2;
 
       const result = (
         <p>
           {numOne} + {numTwo} = {numOne + numTwo}
         </p>
-      )
+      );
 
-      const yearBorn = 1820
-      const currentYear = new Date().getFullYear()
-      const age = currentYear - yearBorn
+      const yearBorn = 1820;
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - yearBorn;
       const personAge = (
         <p>
-          {' '}
+          {" "}
           {author.firstName} {author.lastName} is {age} years old
         </p>
-      )
+      );
 
       // JSX elementi, main
-      const techs = ['HTML', 'CSS', 'JavaScript']
+      const techs = ["HTML", "CSS", "JavaScript"];
 
       // JSX elementi, main
       const main = (
         <main>
-          <div className='main-wrapper'>
+          <div className="main-wrapper">
             <p>
-              Prerequisite to get started{' '}
+              Prerequisite to get started{" "}
               <strong>
                 <em>react.js</em>
               </strong>
@@ -1098,30 +1098,30 @@ JSX'e string, sayı, boolean ve dizi verisi enjekte edebiliriz; ancak doğrudan 
             {personAge}
           </div>
         </main>
-      )
+      );
 
-      const copyRight = 'Copyright 2020'
+      const copyRight = "Copyright 2020";
 
       // JSX elementi, footer
       const footer = (
         <footer>
-          <div className='footer-wrapper'>
+          <div className="footer-wrapper">
             <p>{copyRight}</p>
           </div>
         </footer>
-      )
+      );
 
       // JSX elementi, app
       const app = (
-        <div className='app'>
+        <div className="app">
           {header}
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
@@ -1132,8 +1132,8 @@ JSX'e string, sayı, boolean ve dizi verisi enjekte edebiliriz; ancak doğrudan 
 Gördüğünüz gibi listeler tek satırda görünmektedir. Bu nedenle, JSX'e enjekte etmeden önce listeyi istediğimiz şekilde biçimlendirmeliyiz. Listeyi biçimlendirmek için JSX'e enjekte etmeden önce diziyi değiştirmeliyiz. _map_ kullanarak diziyi değiştirebiliriz. Bir React geliştirici olarak, fonksiyonel programlamayı (map, filter, reduce, find, some, every) çok iyi anlamalısınız. Fonksiyonel programlamayı iyi anlamıyorsanız, 1. güne bakın.
 
 ```js
-const techs = ['HTML', 'CSS', 'JavaScript']
-const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const techs = ["HTML", "CSS", "JavaScript"];
+const techsFormatted = techs.map((tech) => <li>{tech}</li>);
 ```
 
 Aşağıdaki kod örneğinde, liste artık liste elementleri içermekte ve düzgün biçimlendirilmiş durumdadır.
@@ -1162,7 +1162,7 @@ Aşağıdaki kod örneğinde, liste artık liste elementleri içermekte ve düzg
       body {
         height: 100%;
         line-height: 1.5;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 300;
         color: black;
       }
@@ -1244,21 +1244,21 @@ Aşağıdaki kod örneğinde, liste artık liste elementleri içermekte ve düzg
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
       // JSX elementi, header
-      const welcome = 'Welcome to 30 Days Of React Challenge'
-      const title = 'Getting Started React'
-      const subtitle = 'JavaScript Library'
+      const welcome = "Welcome to 30 Days Of React Challenge";
+      const title = "Getting Started React";
+      const subtitle = "JavaScript Library";
       const author = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetayeh',
-      }
-      const date = 'Oct 2, 2020'
+        firstName: "Asabeneh",
+        lastName: "Yetayeh",
+      };
+      const date = "Oct 2, 2020";
 
       // JSX elementi, header
       const header = (
         <header>
-          <div className='header-wrapper'>
+          <div className="header-wrapper">
             <h1>{welcome}</h1>
             <h2>{title}</h2>
             <h3>{subtitle}</h3>
@@ -1268,37 +1268,37 @@ Aşağıdaki kod örneğinde, liste artık liste elementleri içermekte ve düzg
             <small>Date: {date}</small>
           </div>
         </header>
-      )
+      );
 
-      const numOne = 3
-      const numTwo = 2
+      const numOne = 3;
+      const numTwo = 2;
 
       const result = (
         <p>
           {numOne} + {numTwo} = {numOne + numTwo}
         </p>
-      )
+      );
 
-      const yearBorn = 1820
-      const currentYear = new Date().getFullYear()
-      const age = currentYear - yearBorn
+      const yearBorn = 1820;
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - yearBorn;
       const personAge = (
         <p>
-          {' '}
+          {" "}
           {author.firstName} {author.lastName} is {age} years old
         </p>
-      )
+      );
 
       // JSX elementi, main
-      const techs = ['HTML', 'CSS', 'JavaScript']
-      const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+      const techs = ["HTML", "CSS", "JavaScript"];
+      const techsFormatted = techs.map((tech) => <li>{tech}</li>);
 
       // JSX elementi, main
       const main = (
         <main>
-          <div className='main-wrapper'>
+          <div className="main-wrapper">
             <p>
-              Prerequisite to get started{' '}
+              Prerequisite to get started{" "}
               <strong>
                 <em>react.js</em>
               </strong>
@@ -1309,30 +1309,30 @@ Aşağıdaki kod örneğinde, liste artık liste elementleri içermekte ve düzg
             {personAge}
           </div>
         </main>
-      )
+      );
 
-      const copyRight = 'Copyright 2020'
+      const copyRight = "Copyright 2020";
 
       // JSX elementi, footer
       const footer = (
         <footer>
-          <div className='footer-wrapper'>
+          <div className="footer-wrapper">
             <p>{copyRight}</p>
           </div>
         </footer>
-      )
+      );
 
       // JSX elementi, app
       const app = (
-        <div className='app'>
+        <div className="app">
           {header}
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
@@ -1367,7 +1367,7 @@ Yukarıda gördüğünüz gibi, listeler artık düzgün biçimlendirilmiş duru
       body {
         height: 100%;
         line-height: 1.5;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 300;
         color: black;
       }
@@ -1450,21 +1450,21 @@ Yukarıda gördüğünüz gibi, listeler artık düzgün biçimlendirilmiş duru
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       // HTML belgesinden root elementini almak için
-      const rootElement = document.querySelector('.root')
+      const rootElement = document.querySelector(".root");
       // JSX elementi, header
-      const welcome = 'Welcome to 30 Days Of React Challenge'
-      const title = 'Getting Started React'
-      const subtitle = 'JavaScript Library'
+      const welcome = "Welcome to 30 Days Of React Challenge";
+      const title = "Getting Started React";
+      const subtitle = "JavaScript Library";
       const author = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetayeh',
-      }
-      const date = 'Oct 2, 2020'
+        firstName: "Asabeneh",
+        lastName: "Yetayeh",
+      };
+      const date = "Oct 2, 2020";
 
       // JSX elementi, header
       const header = (
         <header>
-          <div className='header-wrapper'>
+          <div className="header-wrapper">
             <h1>{welcome}</h1>
             <h2>{title}</h2>
             <h3>{subtitle}</h3>
@@ -1474,37 +1474,37 @@ Yukarıda gördüğünüz gibi, listeler artık düzgün biçimlendirilmiş duru
             <small>Date: {date}</small>
           </div>
         </header>
-      )
+      );
 
-      const numOne = 3
-      const numTwo = 2
+      const numOne = 3;
+      const numTwo = 2;
 
       const result = (
         <p>
           {numOne} + {numTwo} = {numOne + numTwo}
         </p>
-      )
+      );
 
-      const yearBorn = 1820
-      const currentYear = 2020
-      const age = currentYear - yearBorn
+      const yearBorn = 1820;
+      const currentYear = 2020;
+      const age = currentYear - yearBorn;
       const personAge = (
         <p>
-          {' '}
+          {" "}
           {author.firstName} {author.lastName} is {age} years old
         </p>
-      )
+      );
 
       // JSX elementi, main
-      const techs = ['HTML', 'CSS', 'JavaScript']
-      const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+      const techs = ["HTML", "CSS", "JavaScript"];
+      const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
 
       // JSX elementi, main
       const main = (
         <main>
-          <div className='main-wrapper'>
+          <div className="main-wrapper">
             <p>
-              Prerequisite to get started{' '}
+              Prerequisite to get started{" "}
               <strong>
                 <em>react.js</em>
               </strong>
@@ -1515,30 +1515,30 @@ Yukarıda gördüğünüz gibi, listeler artık düzgün biçimlendirilmiş duru
             {personAge}
           </div>
         </main>
-      )
+      );
 
-      const copyRight = 'Copyright 2020'
+      const copyRight = "Copyright 2020";
 
       // JSX elementi, footer
       const footer = (
         <footer>
-          <div className='footer-wrapper'>
+          <div className="footer-wrapper">
             <p>{copyRight}</p>
           </div>
         </footer>
-      )
+      );
 
       // JSX elementi, app
       const app = (
-        <div className='app'>
+        <div className="app">
           {header}
           {main}
           {footer}
         </div>
-      )
+      );
 
       // JSX elementini ReactDOM paketi kullanarak render ediyoruz
-      ReactDOM.render(app, rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
