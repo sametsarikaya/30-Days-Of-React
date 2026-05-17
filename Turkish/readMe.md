@@ -38,3 +38,5 @@
 | 13    |  [Kontrollü ve Kontrolsüz Input](./13_Gun_Kontrollü_ve_Kontrolsüz_Input/13_kontrolsuz_input.md)  |
 | 14    |  [Bileşen Yaşam Döngüleri](./14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md)  |
 | 15    |  [Üçüncü Taraf Paketler](./15_Gun_Üçüncü_Taraf_Paketler/15_ucuncu_taraf_paketler.md)  |
+| 16    |  [Yüksek Düzey Bileşen](./16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md)  |
+| 17    |  [React Router](./17_Gun_React_Router/17_react_router.md)  |

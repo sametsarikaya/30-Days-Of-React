@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Gün 14](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md) | [Gün 16 >>](../../16_Higher_Order_Component/16_higher_order_component.md)
+[<< Gün 14](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md) | [Gün 16 >>](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_15.jpg)
 
@@ -447,4 +447,4 @@ _classnames_ ve _validator_ paketlerini de nasıl kullanacağınızı öğrenmey
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 14](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md) | [Gün 16 >>](../../16_Higher_Order_Component/16_higher_order_component.md)
+[<< Gün 14](../14_Gun_Bilesen_Yasam_Donguleri/14_bilesen_yasam_donguleri.md) | [Gün 16 >>](../16_Gun_Yuksek_Duzey_Bilesen/16_yuksek_duzey_bilesen.md)
