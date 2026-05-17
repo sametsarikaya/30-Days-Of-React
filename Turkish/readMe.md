@@ -42,3 +42,4 @@
 | 17    |  [React Router](./17_Gun_React_Router/17_react_router.md)  |
 | 18    |  [Fetch ve Axios](./18_Gun_Fetch_ve_Axios/18_fetch_ve_axios.md)  |
 | 19    |  [Projeler](./19_Gun_Projeler/19_projeler.md)  |
+| 20    |  [Projeler](./20_Gun_Projeler/20_projeler.md)  |
