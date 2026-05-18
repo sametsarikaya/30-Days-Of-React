@@ -49,3 +49,5 @@
 | 24    |  [Projeler](./24_Gun_Projeler/24_projeler.md)  |
 | 25    |  [Özel Hook'lar](./25_Gun_Ozel_Hooklar/25_ozel_hooklar.md)  |
 | 26    |  [Context](./26_Gun_Context/26_context.md)  |
+| 27    |  [useRef](./27_Gun_useRef/27_useref.md)  |
+| 28    |  [Proje](./28_Gun_Proje/28_proje.md)  |
