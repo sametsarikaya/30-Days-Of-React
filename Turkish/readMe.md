@@ -51,3 +51,5 @@
 | 26    |  [Context](./26_Gun_Context/26_context.md)  |
 | 27    |  [useRef](./27_Gun_useRef/27_useref.md)  |
 | 28    |  [Proje](./28_Gun_Proje/28_proje.md)  |
+| 29    |  [Keşfet](./29_Gun_Kesfet/29_kesfet.md)  |
+| 30    |  [Sonuçlar](./30_Gun_Sonuclar/30_sonuclar.md)  |
