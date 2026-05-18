@@ -104,19 +104,19 @@ import ReactDOM from "react-dom";
 const App = () => {
   // Yeni state değişkeni bildirimi
   const [count, setCount] = useState(0);
-  const birEkle = () => {
+  const addOne = () => {
     let value = count + 1;
     setCount(value);
   };
-  const birCikar = () => {
+  const minusOne = () => {
     let value = count - 1;
     setCount(value);
   };
   return (
     <div className="App">
       <h1>{count} </h1>
-      <button onClick={birEkle}>Bir Ekle</button>{" "}
-      <button onClick={birCikar}>Bir Çıkar</button>
+      <button onClick={addOne}>Bir Ekle</button>{" "}
+      <button onClick={minusOne}>Bir Çıkar</button>
     </div>
   );
 };
@@ -137,7 +137,7 @@ const App = () => {
 
   const [image, setImage] = useState(url);
 
-  const hayvanDegistir = () => {
+  const changeAnimal = () => {
     let dogURL =
       "https://static.onecms.io/wp-content/uploads/sites/12/2015/04/dogs-pembroke-welsh-corgi-400x400.jpg";
     let catURL =
@@ -153,7 +153,7 @@ const App = () => {
         <img src={image} alt="hayvan" />
       </div>
 
-      <button onClick={hayvanDegistir} className="btn btn-add">
+      <button onClick={changeAnimal} className="btn btn-add">
         Değiştir
       </button>
     </div>

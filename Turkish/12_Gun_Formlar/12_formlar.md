@@ -440,8 +440,8 @@ class App extends React.Component {
             <label htmlFor='favoriteColor'>En Sevdiğiniz Renk</label>
             <input
               type='color'
-              id='color'
-              name='color'
+              id='favoriteColor'
+              name='favoriteColor'
               value={favoriteColor}
               onChange={this.handleChange}
               placeholder='En Sevdiğiniz Renk'
@@ -671,7 +671,7 @@ class App extends Component {
       (this.state.touched.firstName && this.state.firstName.length < 3) ||
       (this.state.touched.firstName && this.state.firstName.length > 12)
     ) {
-      errors.firstName = 'Ad 2 ile 12 karakter arasında olmalıdır'
+      errors.firstName = 'Ad 3 ile 12 karakter arasında olmalıdır'
     }
     return errors
   }

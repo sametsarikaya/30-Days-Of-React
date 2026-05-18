@@ -48,9 +48,9 @@ HTML'de olay yönetimi:
     <title>30 Days Of React App</title>
   </head>
   <body>
-    <button onclick="insanlariSelamla()">İnsanları Selamla</button>
+    <button onclick="greetPeople()">İnsanları Selamla</button>
     <script>
-      const insanlariSelamla = () => {
+      const greetPeople = () => {
         alert('30 Günde React Meydan Okumasına Hoş Geldiniz')
       }
     </script>
@@ -64,10 +64,10 @@ React'te ise biraz farklıdır:
 import React from 'react'
 // fonksiyonel component ise
 const App = () => {
-  const insanlariSelamla = () => {
+  const greetPeople = () => {
     alert('30 Günde React Meydan Okumasına Hoş Geldiniz')
   }
-  return <button onClick={insanlariSelamla}> </button>
+  return <button onClick={greetPeople}> </button>
 }
 ```
 
@@ -75,11 +75,11 @@ const App = () => {
 import React, { Component } from 'react'
 // fonksiyonel component ise
 class App extends Component {
-  insanlariSelamla = () => {
+  greetPeople = () => {
     alert('30 Günde React Meydan Okumasına Hoş Geldiniz')
   }
   render() {
-    return <button onClick={this.insanlariSelamla}> </button>
+    return <button onClick={this.greetPeople}> </button>
   }
 }
 ```
@@ -191,7 +191,7 @@ class App extends Component {
             <input
               onChange={this.handleChange}
               name='firstName'
-              value={this.state.value}
+              value={this.state.firstName}
             />
           </div>
 
