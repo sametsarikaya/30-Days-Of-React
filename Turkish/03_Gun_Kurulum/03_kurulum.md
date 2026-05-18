@@ -154,22 +154,22 @@ $ create-react-app name-of-project
 
 ```sh
 Asabeneh@DESKTOP-KGC1AKC MINGW64 ~
-\$ cd Desktop/
+$ cd Desktop/
 ```
 
 ```sh
 Asabeneh@DESKTOP-KGC1AKC MINGW64 ~/Desktop
-\$ npx create-react-app 30-days-of-react
+$ npx create-react-app 30-days-of-react
 ```
 
 ```sh
 Asabeneh@DESKTOP-KGC1AKC MINGW64 ~/Desktop
-\$ cd 30-days-of-react/
+$ cd 30-days-of-react/
 ```
 
 ```sh
 Asabeneh@DESKTOP-KGC1AKC MINGW64 ~/Desktop/30-days-of-react (master)
-\$ npm start
+$ npm start
 ```
 
 Artık React uygulamanız localhost 3000'de çalışıyor olmalı. App.js dosyasına gidin ve içeriği bir miktar yazı ekleyerek değiştirin; en son değişiklikleri tarayıcıda göreceksiniz.
@@ -258,7 +258,7 @@ Uygulamanız çalışmıyorsa proje klasörünüze gidin ve aşağıdaki komutu 
 
 ```sh
 Asabeneh@DESKTOP-KGC1AKC MINGW64 ~/Desktop/30-days-of-react (master)
-\$ npm start
+$ npm start
 ```
 
 Herhangi bir hata yoksa React uygulamanız tarayıcıda başlatılacaktır.

@@ -31,7 +31,7 @@
 
 ## State (Durum) Nedir?
 
-State nedir? State'in İngilizce anlamı, \_belirli bir anda birisinin veya bir şeyin içinde bulunduğu özel koşul_dur.
+State nedir? State'in İngilizce anlamı, _belirli bir anda birisinin veya bir şeyin içinde bulunduğu özel koşul_dur.
 
 State'in bir şeylerin durumu olduğunu görelim:
 

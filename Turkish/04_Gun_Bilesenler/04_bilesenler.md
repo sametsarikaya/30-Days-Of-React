@@ -39,7 +39,7 @@ Bir React bileşeni, uygulamanın kullanıcı arayüzünün bir bölümünden so
 Bileşenler şu şekilde sınıflandırılabilir:
 
 - Functional Component / Presentational Component / Stateless Component / Dumb Component
-- Class Component / Container Component / Statefull Component / Smart Component
+- Class Component / Container Component / Stateful Component / Smart Component
 
 Yukarıdaki bileşen sınıflandırması React'ın en son sürümü için geçerli değildir; ancak önceki tanımı ve önceki sürümlerin nasıl çalıştığını bilmek faydalıdır.
 
