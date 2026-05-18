@@ -732,7 +732,7 @@ ReactDOM.render(app, rootElement);
 
 ![All JSX together final](../../images/all_jsx_final.png)
 
-Şablon kodunu [buradan](../../03_Day_Setting_Up/30-days-of-react_boilerplate) bulabilirsiniz.
+Şablon kodunu [buradan](../../03_Day_Setting_Up/03_setting_up_boilerplate) bulabilirsiniz.
 
 # Egzersizler
 

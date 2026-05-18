@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Gün 19](../19_Gun_Projeler/19_projeler.md) | [Gün 21 >>](../../21_Introducing_Hooks/21_introducing_hooks.md)
+[<< Gün 19](../19_Gun_Projeler/19_projeler.md) | [Gün 21 >>](../21_Gun_Hook_Giris/21_hook_giris.md)
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_20.jpg)
 
@@ -35,4 +35,4 @@ Sonucunuz şu şekilde görünmelidir: [demo](https://www.30daysofreact.com/day-
 
 🎉 TEBRİKLER! 🎉
 
-[<< Gün 19](../19_Gun_Projeler/19_projeler.md) | [Gün 21 >>](../../21_Introducing_Hooks/21_introducing_hooks.md)
+[<< Gün 19](../19_Gun_Projeler/19_projeler.md) | [Gün 21 >>](../21_Gun_Hook_Giris/21_hook_giris.md)

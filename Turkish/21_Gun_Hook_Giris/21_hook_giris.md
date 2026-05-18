@@ -18,7 +18,7 @@
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_21.jpg)
 
-- [React Hook'larına Giriş](#react-hookları-giriş)
+- [React Hook'larına Giriş](#react-hooklarına-giriş-introducing-react-hook)
   - [Temel Hook'lar](#temel-hooklar)
     - [State Hook](#state-hook)
     - [Effect Hook](#effect-hook)
@@ -51,22 +51,22 @@ Hook kullanmak için önce _useState_'i react'ten import etmemiz gerekir. useSta
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const App = () => {
   // Yeni state değişkeni bildirimi
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div className='App'>
+    <div className="App">
       <h1>{count} </h1>
       <button onClick={() => setCount(count + 1)}>Bir Ekle</button>
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 State'i güncellemek için setCount kullanırız. Başlangıç state değeri 0'dır.
@@ -75,155 +75,155 @@ Yukarıdaki örnekte artırma metodu kullandık. Şimdi bir de azaltma metodu ek
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const App = () => {
   // Yeni state değişkeni bildirimi
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div className='App'>
+    <div className="App">
       <h1>{count} </h1>
-      <button onClick={() => setCount(count + 1)}>Bir Ekle</button>{' '}
+      <button onClick={() => setCount(count + 1)}>Bir Ekle</button>{" "}
       <button onClick={() => setCount(count - 1)}>Bir Çıkar</button>
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Süslü parantezlerin içine fonksiyon yazmak yerine ayrı fonksiyon da yazabiliriz.
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const App = () => {
   // Yeni state değişkeni bildirimi
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const birEkle = () => {
-    let value = count + 1
-    setCount(value)
-  }
+    let value = count + 1;
+    setCount(value);
+  };
   const birCikar = () => {
-    let value = count - 1
-    setCount(value)
-  }
+    let value = count - 1;
+    setCount(value);
+  };
   return (
-    <div className='App'>
+    <div className="App">
       <h1>{count} </h1>
-      <button onClick={birEkle}>Bir Ekle</button>{' '}
+      <button onClick={birEkle}>Bir Ekle</button>{" "}
       <button onClick={birCikar}>Bir Çıkar</button>
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 State hakkında daha fazla örnek yapalım. Aşağıdaki örnekte köpek ya da kedi gösteren küçük bir uygulama geliştireceğiz. Başlangıç state'ini kedi olarak ayarlayıp tıklandığında köpek gösterecek ve bunu dönüşümlü yapacağız. Hayvanı dönüşümlü olarak değiştiren bir metoda ihtiyacımız var. Aşağıdaki koda bakın. Canlı görmek için [tıklayın](https://codepen.io/Asabeneh/full/LYVxKpq).
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 const App = () => {
   // state bildirimi
   const url =
-    'https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg'
+    "https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg";
 
-  const [image, setImage] = useState(url)
+  const [image, setImage] = useState(url);
 
   const hayvanDegistir = () => {
     let dogURL =
-      'https://static.onecms.io/wp-content/uploads/sites/12/2015/04/dogs-pembroke-welsh-corgi-400x400.jpg'
+      "https://static.onecms.io/wp-content/uploads/sites/12/2015/04/dogs-pembroke-welsh-corgi-400x400.jpg";
     let catURL =
-      'https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg'
-    let result = image === catURL ? dogURL : catURL
-    setImage(result)
-  }
+      "https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg";
+    let result = image === catURL ? dogURL : catURL;
+    setImage(result);
+  };
 
   return (
-    <div className='App'>
+    <div className="App">
       <h1>30 Days Of React</h1>
-      <div className='animal'>
-        <img src={image} alt='hayvan' />
+      <div className="animal">
+        <img src={image} alt="hayvan" />
       </div>
 
-      <button onClick={hayvanDegistir} className='btn btn-add'>
+      <button onClick={hayvanDegistir} className="btn btn-add">
         Değiştir
       </button>
     </div>
-  )
-}
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+  );
+};
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Şimdi şimdiye kadar yazdığımız tüm kodları bir araya getirelim; gerektiğinde useState hook'unu kullanarak state'i uygulayalım.
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-import asabenehImage from './images/asabeneh.jpg'
-import './index.scss'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import asabenehImage from "./images/asabeneh.jpg";
+import "./index.scss";
 
 // Ay gün yıl gösterme fonksiyonu
 const showDate = (time) => {
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
-}
+  const month = months[time.getMonth()].slice(0, 3);
+  const year = time.getFullYear();
+  const date = time.getDate();
+  return ` ${month} ${date}, ${year}`;
+};
 
 // Kullanıcı Kartı Bileşeni
 const UserCard = ({ user: { firstName, lastName, image } }) => (
-  <div className='user-card'>
+  <div className="user-card">
     <img src={image} alt={firstName} />
     <h2>
       {firstName}
       {lastName}
     </h2>
   </div>
-)
+);
 
 // Buton bileşeni
 const Button = ({ text, onClick, style }) => (
   <button style={style} onClick={onClick}>
     {text}
   </button>
-)
+);
 
 // JavaScript nesnesi olarak CSS stilleri
 const buttonStyles = {
-  backgroundColor: '#61dbfb',
+  backgroundColor: "#61dbfb",
   padding: 10,
-  border: 'none',
+  border: "none",
   borderRadius: 5,
   margin: 3,
-  cursor: 'pointer',
+  cursor: "pointer",
   fontSize: 18,
-  color: 'white',
-}
+  color: "white",
+};
 
 const Header = (props) => {
   const {
@@ -232,11 +232,11 @@ const Header = (props) => {
     subtitle,
     author: { firstName, lastName },
     date,
-  } = props.data
+  } = props.data;
 
   return (
     <header style={props.styles}>
-      <div className='header-wrapper'>
+      <div className="header-wrapper">
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
@@ -246,25 +246,25 @@ const Header = (props) => {
         <small>{date}</small>
       </div>
     </header>
-  )
-}
+  );
+};
 
 const Count = ({ count, addOne, minusOne }) => (
   <div>
     <h1>{count} </h1>
     <div>
-      <Button text='+1' onClick={addOne} style={buttonStyles} />
-      <Button text='-1' onClick={minusOne} style={buttonStyles} />
+      <Button text="+1" onClick={addOne} style={buttonStyles} />
+      <Button text="-1" onClick={minusOne} style={buttonStyles} />
     </div>
   </div>
-)
+);
 
 // Teknoloji Listesi Bileşeni
 const TechList = (props) => {
-  const { techs } = props
-  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
-  return techsFormatted
-}
+  const { techs } = props;
+  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+  return techsFormatted;
+};
 
 // Ana Bileşen
 const Main = (props) => {
@@ -277,100 +277,104 @@ const Main = (props) => {
     count,
     addOne,
     minusOne,
-  } = props
+  } = props;
   return (
     <main>
-      <div className='main-wrapper'>
+      <div className="main-wrapper">
         <p>React.js'e başlamak için önkoşullar:</p>
         <ul>
           <TechList techs={techs} />
         </ul>
         <UserCard user={user} />
         <Button
-          text='İnsanları Selamla'
+          text="İnsanları Selamla"
           onClick={greetPeople}
           style={buttonStyles}
         />
-        <Button text='Zamanı Göster' onClick={handleTime} style={buttonStyles} />
         <Button
-          text='Arka Planı Değiştir'
+          text="Zamanı Göster"
+          onClick={handleTime}
+          style={buttonStyles}
+        />
+        <Button
+          text="Arka Planı Değiştir"
           onClick={changeBackground}
           style={buttonStyles}
         />
         <Count count={count} addOne={addOne} minusOne={minusOne} />
       </div>
     </main>
-  )
-}
+  );
+};
 
 // Alt Bilgi Bileşeni
 const Footer = (props) => {
   return (
     <footer>
-      <div className='footer-wrapper'>
+      <div className="footer-wrapper">
         <p>Telif Hakkı {props.date.getFullYear()}</p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 const App = (props) => {
-  const [count, setCount] = useState(0)
-  const [backgroundColor, setBackgroundColor] = useState('')
+  const [count, setCount] = useState(0);
+  const [backgroundColor, setBackgroundColor] = useState("");
 
   const showDate = (time) => {
     const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ]
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
 
-    const month = months[time.getMonth()].slice(0, 3)
-    const year = time.getFullYear()
-    const date = time.getDate()
-    return ` ${month} ${date}, ${year}`
-  }
+    const month = months[time.getMonth()].slice(0, 3);
+    const year = time.getFullYear();
+    const date = time.getDate();
+    return ` ${month} ${date}, ${year}`;
+  };
   const addOne = () => {
-    setCount(count + 1)
-  }
+    setCount(count + 1);
+  };
 
   // state'e bir çıkaran metot
   const minusOne = () => {
-    setCount(count - 1)
-  }
+    setCount(count - 1);
+  };
   const handleTime = () => {
-    alert(showDate(new Date()))
-  }
+    alert(showDate(new Date()));
+  };
   const greetPeople = () => {
-    alert('30 Günde React Meydan Okumasına Hoş Geldiniz, 2020')
-  }
-  const changeBackground = () => {}
+    alert("30 Günde React Meydan Okumasına Hoş Geldiniz, 2020");
+  };
+  const changeBackground = () => {};
 
   const data = {
-    welcome: '30 Days Of React\'e Hoş Geldiniz',
-    title: 'React\'e Başlarken',
-    subtitle: 'JavaScript Kütüphanesi',
+    welcome: "30 Days Of React'e Hoş Geldiniz",
+    title: "React'e Başlarken",
+    subtitle: "JavaScript Kütüphanesi",
     author: {
-      firstName: 'Asabeneh',
-      lastName: 'Yetayeh',
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
     },
-    date: 'Eki 7, 2020',
-  }
-  const techs = ['HTML', 'CSS', 'JavaScript']
+    date: "Eki 7, 2020",
+  };
+  const techs = ["HTML", "CSS", "JavaScript"];
 
-  const user = { ...data.author, image: asabenehImage }
+  const user = { ...data.author, image: asabenehImage };
 
   return (
-    <div className='app'>
+    <div className="app">
       {backgroundColor}
       <Header data={data} />
       <Main
@@ -385,11 +389,11 @@ const App = (props) => {
       />
       <Footer date={new Date()} />
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ### Effect Hook

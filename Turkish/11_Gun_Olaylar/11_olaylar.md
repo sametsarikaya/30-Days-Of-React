@@ -16,7 +16,7 @@
 
 [<< Gün 10](../10_Gun_Proje_Klasor_Yapisi/10_proje_klasor_yapisi.md) | [Gün 12 >>](../12_Gun_Formlar/12_formlar.md)
 
-![30 Days of React banner](../../images/30_days_of_react_banner_day_8.jpg)
+![30 Days of React banner](../../images/30_days_of_react_banner_day_11.jpg)
 
 - [Olaylar (Events)](#olaylar-events)
   - [Olay (Event) Nedir?](#olay-event-nedir)
@@ -48,7 +48,7 @@ HTML'de olay yönetimi:
     <title>30 Days Of React App</title>
   </head>
   <body>
-    <button>onclick="insanlariSelamla()">İnsanları Selamla</button>
+    <button onclick="insanlariSelamla()">İnsanları Selamla</button>
     <script>
       const insanlariSelamla = () => {
         alert('30 Günde React Meydan Okumasına Hoş Geldiniz')
@@ -185,7 +185,7 @@ class App extends Component {
         <label htmlFor=''> onBlur Olayı Testi: </label>
         <input type='text' onBlur={this.handleBlur} />
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div>
             <label htmlFor='firstName'>Ad: </label>
             <input

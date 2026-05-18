@@ -18,7 +18,7 @@
 
 ![30 Days of React banner](../../images/30_days_of_react_banner_day_23.jpg)
 
-- [Hook ile Veri Çekme](#hook-ile-veri-çekme)
+- [Hook ile Veri Çekme](#hook-ile-veri-çekme-fetching-data-using-hooks)
 - [Egzersizler](#egzersizler)
 
 # Hook ile Veri Çekme (Fetching Data Using Hooks)
@@ -26,64 +26,64 @@
 Önceki bölümlerde fetch ve axios kullanarak veri çekmeyi öğrendiniz. Bu bölümde veri çekmek için useEffect hook'unu kullanacağız. Fetch veya axios kullanabiliriz ancak axios'u tercih ediyorum. React hook'larında veri çekmek için componentDidMount yaşam döngüsünü ayrıca kullanmamıza gerek yoktur. useEffect, React yaşam döngüsü metodlarını (mounting, updating ve unmounting) bünyesinde barındırmaktadır. Gün 18'de yazdığımız kodu React hook'larına dönüştürelim. useEffect'i react'ten import etmemiz gerekiyor. useEffect iki argüman alır: bir callback fonksiyonu ve bir dizi. Dizi boşsa componentDidMount gibi davranır; dizi başka özellikler içeriyorsa güncelleme davranışı da gösterir.
 
 ```js
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import ReactDOM, { findDOMNode } from 'react-dom'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ReactDOM, { findDOMNode } from "react-dom";
 
 const Country = ({ country: { name, flag, population } }) => {
   return (
-    <div className='country'>
-      <div className='country_flag'>
+    <div className="country">
+      <div className="country_flag">
         <img src={flag} alt={name} />
       </div>
-      <h3 className='country_name'>{name.toUpperCase()}</h3>
-      <div className='country_text'>
+      <h3 className="country_name">{name.toUpperCase()}</h3>
+      <div className="country_text">
         <p>
           <span>Nüfus: </span>
           {population}
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const App = (props) => {
   // başlangıç state ve güncelleme metodu
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
-    const url = 'https://restcountries.eu/rest/v2/all'
+    const url = "https://restcountries.eu/rest/v2/all";
     try {
-      const response = await fetch(url)
-      const data = await response.json()
-      setData(data)
+      const response = await fetch(url);
+      const data = await response.json();
+      setData(data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
-    <div className='App'>
+    <div className="App">
       <h1>Hook Kullanarak Veri Çekme</h1>
       <h1>API Çağrısı</h1>
       <div>
         <p>API'de {data.length} ülke var</p>
-        <div className='countries-wrapper'>
+        <div className="countries-wrapper">
           {data.map((country) => (
             <Country country={country} />
           ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 # Egzersizler

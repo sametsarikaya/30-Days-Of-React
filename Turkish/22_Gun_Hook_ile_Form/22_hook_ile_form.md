@@ -91,34 +91,34 @@ Artık bir formdan veri almak için gereken alanların büyük bölümünü bili
 Input öğesinin value, name, id, placeholder, type ve olay yöneticisi gibi birçok özelliği vardır. Ayrıca bir input alanının id'si ve label'ın htmlFor'u kullanılarak label ile input alanı ilişkilendirilebilir. Label ve input ilişkilendirildiğinde, label'a tıklandığında input'a odaklanır. Aşağıdaki örneğe bakın.
 
 ```js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
   // başlangıç state ve güncelleme metodu
-  const [firstName, setFirstName] = useState('')
+  const [firstName, setFirstName] = useState("");
   const handleChange = (e) => {
-    const value = e.target.value
-    setFirstName(value)
-  }
+    const value = e.target.value;
+    setFirstName(value);
+  };
   return (
-    <div className='App'>
-      <label htmlFor='firstName'>Ad: </label>
+    <div className="App">
+      <label htmlFor="firstName">Ad: </label>
       <input
-        type='text'
-        id='firstName'
-        name='firstName'
-        placeholder='Ad'
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="Ad"
         value={firstName}
         onChange={handleChange}
       />
       <h1>{firstName}</h1>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Genellikle kullanıcı bilgilerini işlemek için form kullanırız. Form bölümüne geçelim ve form öğesini kullanalım.
@@ -130,88 +130,88 @@ Bu bölümde kullanıcı bilgilerini toplayan küçük bir form geliştireceğiz
 Gördüğünüz gibi dört alanımız var; tüm alanları güncellemek için ayrı birer metot oluşturursak (firstName, lastName, country, title için) dört ayrı metot gerekir. Bunun yerine hepsini güncelleyebilecek tek bir metot kullanalım.
 
 ```js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
   const initialState = {
-    firstName: '',
-    lastName: '',
-    country: '',
-    title: '',
-  }
-  const [formData, setData] = useState(initialState)
+    firstName: "",
+    lastName: "",
+    country: "",
+    title: "",
+  };
+  const [formData, setData] = useState(initialState);
 
   const onChange = (e) => {
-    const { name, value } = e.target
-    setData({ ...formData, [name]: value })
-  }
+    const { name, value } = e.target;
+    setData({ ...formData, [name]: value });
+  };
   const onSubmit = (e) => {
     /* 
      e.preventDefault()
      form öğesinin varsayılan davranışını durdurur,
      özellikle sayfanın yenilenmesini engeller
      */
-    e.preventDefault()
+    e.preventDefault();
 
     /*
      burası backend API'ye bağlandığımız
      ve veriyi veritabanına gönderdiğimiz yerdir
      */
-    console.log(formData)
-  }
+    console.log(formData);
+  };
 
   // state değerini destructuring ile erişme
-  const { firstName, lastName, title, country } = formData
+  const { firstName, lastName, title, country } = formData;
   return (
-    <div className='App'>
+    <div className="App">
       <h3>Öğrenci Ekle</h3>
       <form onSubmit={onSubmit}>
         <div>
           <input
-            type='text'
-            name='firstName'
-            placeholder='Ad'
+            type="text"
+            name="firstName"
+            placeholder="Ad"
             value={firstName}
             onChange={onChange}
           />
         </div>
         <div>
           <input
-            type='text'
-            name='lastName'
-            placeholder='Soyad'
+            type="text"
+            name="lastName"
+            placeholder="Soyad"
             value={lastName}
             onChange={onChange}
           />
         </div>
         <div>
           <input
-            type='text'
-            name='country'
-            placeholder='Ülke'
+            type="text"
+            name="country"
+            placeholder="Ülke"
             value={country}
             onChange={onChange}
           />
         </div>
         <div>
           <input
-            type='text'
-            name='title'
-            placeholder='Unvan'
+            type="text"
+            name="title"
+            placeholder="Unvan"
             value={title}
             onChange={onChange}
           />
         </div>
 
-        <button className='btn btn-success'>Gönder</button>
+        <button className="btn btn-success">Gönder</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 Yukarıdaki form yalnızca metin türlerini işlemektedir; ancak farklı input alan türleri de vardır. Tüm farklı input alan türlerini işleyen başka bir form yazalım.
@@ -220,92 +220,92 @@ Yukarıdaki form yalnızca metin türlerini işlemektedir; ancak farklı input a
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const options = [
   {
-    value: '',
-    label: '-- Ülke Seçin --',
+    value: "",
+    label: "-- Ülke Seçin --",
   },
   {
-    value: 'Finland',
-    label: 'Finlandiya',
+    value: "Finland",
+    label: "Finlandiya",
   },
   {
-    value: 'Sweden',
-    label: 'İsveç',
+    value: "Sweden",
+    label: "İsveç",
   },
   {
-    value: 'Norway',
-    label: 'Norveç',
+    value: "Norway",
+    label: "Norveç",
   },
   {
-    value: 'Denmark',
-    label: 'Danimarka',
+    value: "Denmark",
+    label: "Danimarka",
   },
-]
+];
 
 // seçenekleri JSX option listesine (diziye) dönüştürme
 
 const selectOptions = options.map(({ value, label }) => (
   <option key={label} value={value}>
-    {' '}
+    {" "}
     {label}
   </option>
-))
+));
 
 const App = (props) => {
   const initialState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    title: '',
-    country: '',
-    tel: '',
-    dateOfBirth: '',
-    favoriteColor: '',
-    weight: '',
-    gender: '',
-    file: '',
-    bio: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    title: "",
+    country: "",
+    tel: "",
+    dateOfBirth: "",
+    favoriteColor: "",
+    weight: "",
+    gender: "",
+    file: "",
+    bio: "",
     skills: {
       html: false,
       css: false,
       javascript: false,
     },
-  }
-  const [formData, setFormData] = useState(initialState)
+  };
+  const [formData, setFormData] = useState(initialState);
 
   const onChange = (e) => {
     /*
      adı ve değeri şöyle alabiliriz: e.target.name, e.target.value
      ya da e.target'tan name ve value'yi destructure edebiliriz
     */
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     /*
     [değişkenAdı] bir değişkende saklanan değeri nesne için
     anahtar olarak kullanmamızı sağlar; burada state için anahtar
     */
 
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       setFormData({
         ...formData,
         skills: { ...formData.skills, [name]: checked },
-      })
-    } else if (type === 'file') {
-      setFormData({ ...formData, [name]: e.target.files[0] })
+      });
+    } else if (type === "file") {
+      setFormData({ ...formData, [name]: e.target.files[0] });
     } else {
-      setFormData({ ...formData, [name]: value })
+      setFormData({ ...formData, [name]: value });
     }
-  }
+  };
   const onSubmit = (e) => {
     /*
      e.preventDefault()
      form öğesinin varsayılan davranışını durdurur,
      özellikle sayfanın yenilenmesini engeller
     */
-    e.preventDefault()
+    e.preventDefault();
     const {
       firstName,
       lastName,
@@ -320,13 +320,13 @@ const App = (props) => {
       bio,
       file,
       skills,
-    } = formData
+    } = formData;
 
-    const formattedSkills = []
+    const formattedSkills = [];
     for (const key in skills) {
-      console.log(key)
+      console.log(key);
       if (skills[key]) {
-        formattedSkills.push(key.toUpperCase())
+        formattedSkills.push(key.toUpperCase());
       }
     }
     const data = {
@@ -343,13 +343,13 @@ const App = (props) => {
       bio,
       file,
       skills: formattedSkills,
-    }
+    };
     /*
      burası backend API'ye bağlandığımız
      ve veriyi veritabanına gönderdiğimiz yerdir
      */
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   // state değerini destructuring ile erişme
   const {
@@ -364,109 +364,109 @@ const App = (props) => {
     weight,
     gender,
     bio,
-  } = formData
+  } = formData;
   return (
-    <div className='App'>
+    <div className="App">
       <h3>Öğrenci Ekle</h3>
       <form onSubmit={onSubmit}>
-        <div className='row'>
-          <div className='form-group'>
-            <label htmlFor='firstName'>Ad </label>
+        <div className="row">
+          <div className="form-group">
+            <label htmlFor="firstName">Ad </label>
             <input
-              type='text'
-              id='firstName'
-              name='firstName'
+              type="text"
+              id="firstName"
+              name="firstName"
               value={firstName}
               onChange={onChange}
-              placeholder='Ad'
+              placeholder="Ad"
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='lastName'>Soyad </label>
+          <div className="form-group">
+            <label htmlFor="lastName">Soyad </label>
             <input
-              type='text'
-              id='lastName'
-              name='lastName'
+              type="text"
+              id="lastName"
+              name="lastName"
               value={lastName}
               onChange={onChange}
-              placeholder='Soyad'
+              placeholder="Soyad"
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='title'>Unvan </label>
+          <div className="form-group">
+            <label htmlFor="title">Unvan </label>
             <input
-              type='text'
-              id='title'
-              name='title'
-              placeholder='Unvan'
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Unvan"
               value={title}
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='email'>E-posta </label>
+          <div className="form-group">
+            <label htmlFor="email">E-posta </label>
             <input
-              type='email'
-              id='email'
-              name='email'
+              type="email"
+              id="email"
+              name="email"
               value={email}
               onChange={onChange}
-              placeholder='E-posta'
+              placeholder="E-posta"
             />
           </div>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='tel'>Telefon </label>
+        <div className="form-group">
+          <label htmlFor="tel">Telefon </label>
           <input
-            type='tel'
-            id='tel'
-            name='tel'
+            type="tel"
+            id="tel"
+            name="tel"
             value={tel}
             onChange={onChange}
-            placeholder='Tel'
+            placeholder="Tel"
           />
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='dateOfBirth'>Doğum Tarihi </label>
+        <div className="form-group">
+          <label htmlFor="dateOfBirth">Doğum Tarihi </label>
           <input
-            type='date'
-            id='dateOfBirth'
-            name='dateOfBirth'
+            type="date"
+            id="dateOfBirth"
+            name="dateOfBirth"
             value={dateOfBirth}
             onChange={onChange}
-            placeholder='Doğum Tarihi'
+            placeholder="Doğum Tarihi"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='favoriteColor'>Favori Renk</label>
+        <div className="form-group">
+          <label htmlFor="favoriteColor">Favori Renk</label>
           <input
-            type='color'
-            id='color'
-            name='favoriteColor'
+            type="color"
+            id="color"
+            name="favoriteColor"
             value={favoriteColor}
             onChange={onChange}
-            placeholder='Favori Renk'
+            placeholder="Favori Renk"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='weight'>Kilo </label>
+        <div className="form-group">
+          <label htmlFor="weight">Kilo </label>
           <input
-            type='number'
-            id='weight'
-            name='weight'
+            type="number"
+            id="weight"
+            name="weight"
             value={weight}
             onChange={onChange}
-            placeholder='Kg cinsinden kilo'
+            placeholder="Kg cinsinden kilo"
           />
         </div>
         <div>
-          <label htmlFor='country'>Ülke</label> <br />
+          <label htmlFor="country">Ülke</label> <br />
           <select
-            name='country'
+            name="country"
             onChange={onChange}
-            id='country'
+            id="country"
             value={country}
           >
             {selectOptions}
@@ -477,85 +477,85 @@ const App = (props) => {
           <p>Cinsiyet</p>
           <div>
             <input
-              type='radio'
-              id='female'
-              name='gender'
-              value='Female'
+              type="radio"
+              id="female"
+              name="gender"
+              value="Female"
               onChange={onChange}
-              checked={gender === 'Female'}
+              checked={gender === "Female"}
             />
-            <label htmlFor='female'>Kadın</label>
+            <label htmlFor="female">Kadın</label>
           </div>
           <div>
             <input
-              id='male'
-              type='radio'
-              name='gender'
-              value='Male'
+              id="male"
+              type="radio"
+              name="gender"
+              value="Male"
               onChange={onChange}
-              checked={gender === 'Male'}
+              checked={gender === "Male"}
             />
-            <label htmlFor='male'>Erkek</label>
+            <label htmlFor="male">Erkek</label>
           </div>
           <div>
             <input
-              id='other'
-              type='radio'
-              name='gender'
-              value='Other'
+              id="other"
+              type="radio"
+              name="gender"
+              value="Other"
               onChange={onChange}
-              checked={gender === 'Other'}
+              checked={gender === "Other"}
             />
-            <label htmlFor='other'>Diğer</label>
+            <label htmlFor="other">Diğer</label>
           </div>
         </div>
 
         <div>
           <p>Becerilerinizi seçin</p>
           <div>
-            <input type='checkbox' id='html' name='html' onChange={onChange} />
-            <label htmlFor='html'>HTML</label>
+            <input type="checkbox" id="html" name="html" onChange={onChange} />
+            <label htmlFor="html">HTML</label>
           </div>
           <div>
-            <input type='checkbox' id='css' name='css' onChange={onChange} />
-            <label htmlFor='css'>CSS</label>
+            <input type="checkbox" id="css" name="css" onChange={onChange} />
+            <label htmlFor="css">CSS</label>
           </div>
           <div>
             <input
-              type='checkbox'
-              id='javascript'
-              name='javascript'
+              type="checkbox"
+              id="javascript"
+              name="javascript"
               onChange={onChange}
             />
-            <label htmlFor='javascript'>JavaScript</label>
+            <label htmlFor="javascript">JavaScript</label>
           </div>
         </div>
         <div>
-          <label htmlFor='bio'>Biyografi</label> <br />
+          <label htmlFor="bio">Biyografi</label> <br />
           <textarea
-            id='bio'
-            name='bio'
+            id="bio"
+            name="bio"
             value={bio}
             onChange={onChange}
-            cols='120'
-            rows='10'
-            placeholder='Kendiniz hakkında yazın ...'
+            cols="120"
+            rows="10"
+            placeholder="Kendiniz hakkında yazın ..."
           />
         </div>
 
         <div>
-          <input type='file' name='file' onChange={onChange} />
+          <input type="file" name="file" onChange={onChange} />
         </div>
         <div>
           <button>Gönder</button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## Form Doğrulama (Form Validation)
@@ -576,54 +576,54 @@ Aşağıdaki kod parçasında ilk alan için doğrulama uygulanmıştır. Nasıl
 
 ```js
 // index.js
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const options = [
   {
-    value: '',
-    label: '-- Ülke Seçin --',
+    value: "",
+    label: "-- Ülke Seçin --",
   },
   {
-    value: 'Finland',
-    label: 'Finlandiya',
+    value: "Finland",
+    label: "Finlandiya",
   },
   {
-    value: 'Sweden',
-    label: 'İsveç',
+    value: "Sweden",
+    label: "İsveç",
   },
   {
-    value: 'Norway',
-    label: 'Norveç',
+    value: "Norway",
+    label: "Norveç",
   },
   {
-    value: 'Denmark',
-    label: 'Danimarka',
+    value: "Denmark",
+    label: "Danimarka",
   },
-]
+];
 
 // seçenekleri JSX option listesine (diziye) dönüştürme
 const selectOptions = options.map(({ value, label }) => (
   <option key={label} value={value}>
-    {' '}
+    {" "}
     {label}
   </option>
-))
+));
 
 const App = (props) => {
   const initialState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    title: '',
-    country: '',
-    tel: '',
-    dateOfBirth: '',
-    favoriteColor: '',
-    weight: '',
-    gender: '',
-    file: '',
-    bio: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    title: "",
+    country: "",
+    tel: "",
+    dateOfBirth: "",
+    favoriteColor: "",
+    weight: "",
+    gender: "",
+    file: "",
+    bio: "",
     skills: {
       html: false,
       css: false,
@@ -633,37 +633,37 @@ const App = (props) => {
       firstName: false,
       lastName: false,
     },
-  }
-  const [formData, setFormData] = useState(initialState)
+  };
+  const [formData, setFormData] = useState(initialState);
 
   const onChange = (e) => {
     /*
      adı ve değeri şöyle alabiliriz: e.target.name, e.target.value
      ya da e.target'tan name ve value'yi destructure edebiliriz
     */
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     /*
     [değişkenAdı] bir değişkende saklanan değeri nesne için anahtar olarak kullanmamızı sağlar
     */
 
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       setFormData({
         ...formData,
         skills: { ...formData.skills, [name]: checked },
-      })
-    } else if (type === 'file') {
-      setFormData({ ...formData, [name]: e.target.files[0] })
+      });
+    } else if (type === "file") {
+      setFormData({ ...formData, [name]: e.target.files[0] });
     } else {
-      setFormData({ ...formData, [name]: value })
+      setFormData({ ...formData, [name]: value });
     }
-  }
+  };
   const onSubmit = (e) => {
     /*
      e.preventDefault()
      form öğesinin varsayılan davranışını durdurur,
      özellikle sayfanın yenilenmesini engeller
     */
-    e.preventDefault()
+    e.preventDefault();
     const {
       firstName,
       lastName,
@@ -678,13 +678,13 @@ const App = (props) => {
       bio,
       file,
       skills,
-    } = formData
+    } = formData;
 
-    const formattedSkills = []
+    const formattedSkills = [];
     for (const key in skills) {
-      console.log(key)
+      console.log(key);
       if (skills[key]) {
-        formattedSkills.push(key.toUpperCase())
+        formattedSkills.push(key.toUpperCase());
       }
     }
     const data = {
@@ -701,31 +701,34 @@ const App = (props) => {
       bio,
       file,
       skills: formattedSkills,
-    }
+    };
     /*
      burası backend API'ye bağlandığımız
      ve veriyi veritabanına gönderdiğimiz yerdir
      */
-    console.log(data)
-  }
+    console.log(data);
+  };
   const onBlur = (e) => {
-    const { name } = e.target
-    setFormData({ ...formData, touched: { ...formData.touched, [name]: true } })
-  }
+    const { name } = e.target;
+    setFormData({
+      ...formData,
+      touched: { ...formData.touched, [name]: true },
+    });
+  };
   const validate = () => {
     // Hata geri bildirimlerini toplamak ve formda göstermek için nesne
     const errors = {
-      firstName: '',
-    }
+      firstName: "",
+    };
 
     if (
       (formData.touched.firstName && formData.firstName.length < 3) ||
       (formData.touched.firstName && formData.firstName.length > 12)
     ) {
-      errors.firstName = 'Ad 2 ile 12 karakter arasında olmalıdır'
+      errors.firstName = "Ad 2 ile 12 karakter arasında olmalıdır";
     }
-    return errors
-  }
+    return errors;
+  };
 
   // state değerini destructuring ile erişme
   const {
@@ -740,115 +743,115 @@ const App = (props) => {
     weight,
     gender,
     bio,
-  } = formData
+  } = formData;
 
-  const errors = validate()
+  const errors = validate();
 
   return (
-    <div className='App'>
+    <div className="App">
       <h3>Öğrenci Ekle</h3>
       <form onSubmit={onSubmit}>
-        <div className='row'>
-          <div className='form-group'>
-            <label htmlFor='firstName'>Ad </label>
+        <div className="row">
+          <div className="form-group">
+            <label htmlFor="firstName">Ad </label>
             <input
-              type='text'
-              id='firstName'
-              name='firstName'
+              type="text"
+              id="firstName"
+              name="firstName"
               value={firstName}
               onChange={onChange}
               onBlur={onBlur}
-              placeholder='Ad'
+              placeholder="Ad"
             />
             <br />
             {errors.firstName && <small>{errors.firstName}</small>}
           </div>
-          <div className='form-group'>
-            <label htmlFor='lastName'>Soyad </label>
+          <div className="form-group">
+            <label htmlFor="lastName">Soyad </label>
             <input
-              type='text'
-              id='lastName'
-              name='lastName'
+              type="text"
+              id="lastName"
+              name="lastName"
               value={lastName}
               onChange={onChange}
-              placeholder='Soyad'
+              placeholder="Soyad"
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='title'>Unvan </label>
+          <div className="form-group">
+            <label htmlFor="title">Unvan </label>
             <input
-              type='text'
-              id='title'
-              name='title'
-              placeholder='Unvan'
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Unvan"
               value={title}
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='email'>E-posta </label>
+          <div className="form-group">
+            <label htmlFor="email">E-posta </label>
             <input
-              type='email'
-              id='email'
-              name='email'
+              type="email"
+              id="email"
+              name="email"
               value={email}
               onChange={onChange}
-              placeholder='E-posta'
+              placeholder="E-posta"
             />
           </div>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='tel'>Telefon </label>
+        <div className="form-group">
+          <label htmlFor="tel">Telefon </label>
           <input
-            type='tel'
-            id='tel'
-            name='tel'
+            type="tel"
+            id="tel"
+            name="tel"
             value={tel}
             onChange={onChange}
-            placeholder='Tel'
+            placeholder="Tel"
           />
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='dateOfBirth'>Doğum Tarihi </label>
+        <div className="form-group">
+          <label htmlFor="dateOfBirth">Doğum Tarihi </label>
           <input
-            type='date'
-            id='dateOfBirth'
-            name='dateOfBirth'
+            type="date"
+            id="dateOfBirth"
+            name="dateOfBirth"
             value={dateOfBirth}
             onChange={onChange}
-            placeholder='Doğum Tarihi'
+            placeholder="Doğum Tarihi"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='favoriteColor'>Favori Renk</label>
+        <div className="form-group">
+          <label htmlFor="favoriteColor">Favori Renk</label>
           <input
-            type='color'
-            id='color'
-            name='favoriteColor'
+            type="color"
+            id="color"
+            name="favoriteColor"
             value={favoriteColor}
             onChange={onChange}
-            placeholder='Favori Renk'
+            placeholder="Favori Renk"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='weight'>Kilo </label>
+        <div className="form-group">
+          <label htmlFor="weight">Kilo </label>
           <input
-            type='number'
-            id='weight'
-            name='weight'
+            type="number"
+            id="weight"
+            name="weight"
             value={weight}
             onChange={onChange}
-            placeholder='Kg cinsinden kilo'
+            placeholder="Kg cinsinden kilo"
           />
         </div>
         <div>
-          <label htmlFor='country'>Ülke</label> <br />
+          <label htmlFor="country">Ülke</label> <br />
           <select
-            name='country'
+            name="country"
             onChange={onChange}
-            id='country'
+            id="country"
             value={country}
           >
             {selectOptions}
@@ -859,85 +862,85 @@ const App = (props) => {
           <p>Cinsiyet</p>
           <div>
             <input
-              type='radio'
-              id='female'
-              name='gender'
-              value='Female'
+              type="radio"
+              id="female"
+              name="gender"
+              value="Female"
               onChange={onChange}
-              checked={gender === 'Female'}
+              checked={gender === "Female"}
             />
-            <label htmlFor='female'>Kadın</label>
+            <label htmlFor="female">Kadın</label>
           </div>
           <div>
             <input
-              id='male'
-              type='radio'
-              name='gender'
-              value='Male'
+              id="male"
+              type="radio"
+              name="gender"
+              value="Male"
               onChange={onChange}
-              checked={gender === 'Male'}
+              checked={gender === "Male"}
             />
-            <label htmlFor='male'>Erkek</label>
+            <label htmlFor="male">Erkek</label>
           </div>
           <div>
             <input
-              id='other'
-              type='radio'
-              name='gender'
-              value='Other'
+              id="other"
+              type="radio"
+              name="gender"
+              value="Other"
               onChange={onChange}
-              checked={gender === 'Other'}
+              checked={gender === "Other"}
             />
-            <label htmlFor='other'>Diğer</label>
+            <label htmlFor="other">Diğer</label>
           </div>
         </div>
 
         <div>
           <p>Becerilerinizi seçin</p>
           <div>
-            <input type='checkbox' id='html' name='html' onChange={onChange} />
-            <label htmlFor='html'>HTML</label>
+            <input type="checkbox" id="html" name="html" onChange={onChange} />
+            <label htmlFor="html">HTML</label>
           </div>
           <div>
-            <input type='checkbox' id='css' name='css' onChange={onChange} />
-            <label htmlFor='css'>CSS</label>
+            <input type="checkbox" id="css" name="css" onChange={onChange} />
+            <label htmlFor="css">CSS</label>
           </div>
           <div>
             <input
-              type='checkbox'
-              id='javascript'
-              name='javascript'
+              type="checkbox"
+              id="javascript"
+              name="javascript"
               onChange={onChange}
             />
-            <label htmlFor='javascript'>JavaScript</label>
+            <label htmlFor="javascript">JavaScript</label>
           </div>
         </div>
         <div>
-          <label htmlFor='bio'>Biyografi</label> <br />
+          <label htmlFor="bio">Biyografi</label> <br />
           <textarea
-            id='bio'
-            name='bio'
+            id="bio"
+            name="bio"
             value={bio}
             onChange={onChange}
-            cols='120'
-            rows='10'
-            placeholder='Kendiniz hakkında yazın ...'
+            cols="120"
+            rows="10"
+            placeholder="Kendiniz hakkında yazın ..."
           />
         </div>
 
         <div>
-          <input type='file' name='file' onChange={onChange} />
+          <input type="file" name="file" onChange={onChange} />
         </div>
         <div>
           <button>Gönder</button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 # Egzersizler

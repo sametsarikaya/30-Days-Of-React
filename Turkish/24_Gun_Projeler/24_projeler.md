@@ -23,7 +23,7 @@
 # Egzersizler
 
 1. [Ülkeler API](https://restcountries.eu/rest/v2/all)'sini kullanarak aşağıdaki uygulamayı geliştirin.
-[DEMO](https://www.30daysofreact.com/day-23/countries-data)
+   [DEMO](https://www.30daysofreact.com/day-23/countries-data)
 
 🎉 TEBRİKLER! 🎉
 

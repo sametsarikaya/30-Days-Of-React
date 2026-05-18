@@ -31,27 +31,27 @@ Aşağıdaki örnekte useRef hook'unu kullanarak input'tan nasıl veri alacağı
 Kontrolsüz input öğesinden veri alalım.
 
 ```js
-import React, { useRef } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useRef } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const onClick = () => {
-    let value = ref.current.value
-    alert(value)
-  }
+    let value = ref.current.value;
+    alert(value);
+  };
   return (
-    <div className='App'>
+    <div className="App">
       <h1>useRef ile kontrolsüz input'tan veri nasıl alınır</h1>
-      <input type='text' ref={ref} />
+      <input type="text" ref={ref} />
       <br />
       <button onClick={onClick}>Input Verisini Al</button>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## Odaklanma (Focus)
@@ -59,26 +59,26 @@ ReactDOM.render(<App />, rootElement)
 useRef kullanarak input üzerinde odak olayını tetikleyebiliriz.
 
 ```js
-import React, { useRef } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useRef } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const onClick = () => {
-    ref.current.focus()
-  }
+    ref.current.focus();
+  };
   return (
-    <div className='App'>
+    <div className="App">
       <h1>useRef ile input öğesine nasıl odaklanılır</h1>
-      <input type='text' ref={ref} />
+      <input type="text" ref={ref} />
       <br />
       <button onClick={onClick}>Input'a Odaklanmak İçin Tıkla</button>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## DOM Ağacından İçerik Alma
@@ -86,26 +86,26 @@ ReactDOM.render(<App />, rootElement)
 React uygulaması geliştirirken DOM'a doğrudan müdahale etmeyin çünkü React, sanal DOM aracılığıyla DOM'u manipüle etmenin kendi yoluna sahiptir. Bununla birlikte DOM ağacından içerik almak istediğimizde useRef hook'unu kullanabiliriz. Örneğe bakın:
 
 ```js
-import React, { useRef } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useRef } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const onClick = () => {
-    let content = ref.current.textContent
-    alert(content)
-    console.log(content)
-  }
+    let content = ref.current.textContent;
+    alert(content);
+    console.log(content);
+  };
   return (
-    <div className='App'>
+    <div className="App">
       <h1 ref={ref}>DOM ağacından içerik nasıl alınır</h1>
       <button onClick={onClick}>İçeriği Al</button>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ## Bir DOM Öğesine Erişme ve Stillendirme
@@ -113,26 +113,26 @@ ReactDOM.render(<App />, rootElement)
 DOM ağacındaki bir öğeye erişebilir ve stilini değiştirebiliriz. Aşağıdaki örneğe bakın:
 
 ```js
-import React, { useRef } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useRef } from "react";
+import ReactDOM from "react-dom";
 
 const App = (props) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const onClick = () => {
-    ref.current.style.backgroundColor = '#61dbfb'
-    ref.current.style.padding = '50px'
-    ref.current.style.textAlign = 'center'
-  }
+    ref.current.style.backgroundColor = "#61dbfb";
+    ref.current.style.padding = "50px";
+    ref.current.style.textAlign = "center";
+  };
   return (
-    <div className='App'>
+    <div className="App">
       <h1 ref={ref}>useRef ile DOM ağacındaki HTML nasıl stillendirilir</h1>
       <button onClick={onClick}>Stillendir</button>
     </div>
-  )
-}
+  );
+};
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 # Egzersizler

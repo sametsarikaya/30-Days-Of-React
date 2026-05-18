@@ -425,9 +425,9 @@ class App extends Component {
     }
   }
 
-  shouldComponentUpdate(nexProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log(nextProps, nextState)
-    // true döndürülürse uygulama asla güncellenmez
+    // true döndürülürse uygulama güncellenir
     return true
   }
 

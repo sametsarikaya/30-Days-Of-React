@@ -309,7 +309,7 @@ const lastName = "Yetayeh";
 const date = "Oct 3, 2020";
 
 // JSX elementi, header
-const header = () => {
+const Header = () => {
   return (
     <header>
       <div className="header-wrapper">
@@ -425,7 +425,7 @@ const Footer = () => (
 );
 
 // JSX elementi, app
-const app = () => (
+const App = () => (
   <div className="app">
     <Header />
     <Main />

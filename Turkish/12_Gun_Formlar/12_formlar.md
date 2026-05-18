@@ -222,7 +222,7 @@ class App extends Component {
             />
           </div>
 
-          <button class='btn btn-success'>Gönder</button>
+          <button className='btn btn-success'>Gönder</button>
         </form>
       </div>
     )
